@@ -1,6 +1,6 @@
 package com.poly.polyapcsafinalproject23_24;
 
-import java.util.Scanner;
+
 
 public class GameCashawCharles extends GameActivity {
 
@@ -11,14 +11,31 @@ public class GameCashawCharles extends GameActivity {
      */
     private GymHead gymhead;
 
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+    private ImageView ivStory;
+    private Button btn1, btn2, btn3, btn4;
+
     //write game down here
     //  use other void methods as nesssary
     //  use loops as nessesary
     /**
      * method that starts the workout. Calls createGymhead() and runWorkout()
      */
+    @Override
     public void run()
     {
+        setContentView(R.layout.activity_game_4_button);
+
+        tvTitle = findViewById(R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+        btn4 = findViewById(R.id.btn_4);
+        tvTitle.setText("WORKOUT");
+        tvSubtitle.setText("");
         createGymhead();
         runWorkout();
     }
@@ -63,7 +80,6 @@ public class GameCashawCharles extends GameActivity {
      */
     private void displayStats()
     {
-        Util.clearConsole();
         String text =
                 gymhead.getName() +
                         "\nPull ups done:\t\t" + gymhead.getPullUps() +
@@ -71,7 +87,6 @@ public class GameCashawCharles extends GameActivity {
                         "\nSquats done:\t\t" + gymhead.getSquats() +
                         "\nSit ups done:\t\t" + gymhead.getSitUps();
         System.out.println(text);
-        Util.pauseConsole();
     }
 
     /**
@@ -87,7 +102,6 @@ public class GameCashawCharles extends GameActivity {
       4. Sit up
       """;
         System.out.println(text);
-        int option = Util.enterInt(1,4);
         if (option == 1)
         {
             gymhead.doPullUp();
@@ -117,12 +131,11 @@ public class GameCashawCharles extends GameActivity {
         {
             System.out.println("Workout done!");
         }
-        Util.pauseConsole();
-        Util.clearConsole();
+
         System.out.println("Congratulations, you did " + gymhead.getPullUps() + " pull ups " + gymhead.getPushUps() + " push ups " + gymhead.getSquats() + " squats and " + gymhead.getSitUps() + " sit ups ");
-        Util.pauseConsole();
+
         System.out.println("Workout again?\n1. YES\n2. NO!");
-        int option = Util.enterInt(1,2);
+
         if (option == 1)
         {
             gymhead = new GymHead(gymhead.getName());
