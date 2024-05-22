@@ -21,7 +21,7 @@ public class GameBinghamDaniel extends GameActivity {
         //player = new Player(...)
 
         //display project title and description
-        Util.clearConsole();
+
         String text = """
     Summer vacation in Japan
     You've finished your freshman year of college and decide to treat yourself to a nice summer vacation. You decide to go to Japan because you've always wanted to visit there. What happens next is up to you. Good luck!
