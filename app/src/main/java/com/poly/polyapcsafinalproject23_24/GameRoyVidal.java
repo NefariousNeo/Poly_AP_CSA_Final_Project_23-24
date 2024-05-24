@@ -14,23 +14,24 @@ public class GameRoyVidal extends GameActivity {
     //private Player player; (optional)
 
 
-    setContentView(R.layout.activity_game_3_button);
-
-    tvTitle = findViewById(R.id.tv_title_txt);
-    tvSubtitle = findViewById(R.id.tv_subtitle);
-    tvStoryText = findViewById(R.id.tv_story);
-    ivStory = findViewById(R.id.iv_story);
-    btn1 = findViewById(R.id.btn_1):
-    btn2 = findViewById(R.id.btn_2);
-    btn3 = findViewById(R.id.btn_3);
-
-    tvTitle.setText("VACATION");
-    tvSubtitle.setText("PLANNER");
-
 
 
     public void run()
     {
+        setContentView(R.layout.activity_game_3_button);
+
+        tvTitle = findViewById(R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1):
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+
+        tvTitle.setText("VACATION");
+        tvSubtitle.setText("PLANNER");
+
+
         //initialize number of lives
         numLives = 5;
         //create a scanner object for user input
@@ -52,23 +53,35 @@ public class GameRoyVidal extends GameActivity {
 
 
 
-        System.out.println("\nIts FINALLY Summer ");
+        ivStory.setImageResource(R.drawable.im_laborday_title);
 
-        System.out.println("\nWhere would you like to go?");
-        System.out.println("1.Stay in hotel \n2.Go swimming \n3.Go explore ");
 
-        if (choice == 1)
-        {
-            stayInHotel();
-        }
-        else if (choice == 2)
-        {
-            goSwimming();
-        }
-        else if (choice == 3)
-        {
-            goExplore();
-        }
+
+        setAllBtnsVisible();
+        btn1.setText("Stay In Hotel");
+        btn2.setText("Go swimming");
+        btn3.setText("Go explore");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stayInHotel();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goSwimming();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goExplore();
+            }
+        });
+
     }
     //PATHS
     //OPTION 1 ____________________________________
@@ -76,80 +89,134 @@ public class GameRoyVidal extends GameActivity {
 
     private void stayInHotel()
     {
-        System.out.println("\nWhat would you like to do inside the hotel?");
-        System.out.println("1.Leave your room\n2.Stay inside your room");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            leaveRoom();
-        }
-        else if (choice == 2)
-        {
-            stayInRoom();
-        }
+        tvStoryText.setText("What would you like to do inside the hotel?");
+
+        setAllBtnsVisible();
+        btn1.setText("leaveRoom");
+        btn2.setText("stayInRoom");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                leaveRoom();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stayInRoom();
+            }
+        });
     }
 
     private void leaveRoom()
     {
-        System.out.println("\nWhat would u rather do, go outside or stay inside the lobby ?");
-        System.out.println("1.Inside\n2.Outside");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            inside();
-        }
-        else if (choice == 2)
-        {
-            outside();
-        }
+        tvStoryText.setText("What would you rather do, go outside or stay inside the lobby ?");
+
+        setAllBtnsVisible();
+        btn1.setText("inside");
+        btn2.setText("outside");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inside();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                outside();
+            }
+        });
     }
 
     private void inside()
     {
-        System.out.println("\nWhat would u rather do Inside the lobby ?");
-        System.out.println("1.Play 8 Ball\n2.Play BlackJack");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            eightBall();
-        }
-        else if (choice == 2)
-        {
-            blackJack();
-        }
+        tvStoryText.setText("What would you rather do inside the lobby ?");
+
+        setAllBtnsVisible();
+        btn1.setText("eightBall");
+        btn2.setText("blackJack");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { eightBall();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { blackJack();}
+        });
     }
 
     private void outside()
     {
-        System.out.println("\nWhat would u rather do outside your room ?");
-        System.out.println("1.Play Basketball\n2.Playfootball");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            playBasketball();
-        }
-        else if (choice == 2)
-        {
-            playFootball();
-        }
+        tvStoryText.setText("What would you rather do outside ?");
+
+        setAllBtnsVisible();
+        btn1.setText("playBasketball");
+        btn2.setText("playFootball");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playBasketball();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playFootball();
+            }
+        });
     }
     private void stayInRoom()
     {
-        System.out.println("\nWhat would you like to do inside your hotel room?");
-        System.out.println("1.Take melatonin and sleep \n2.Eat burgers and watch TV \n3. Talk to your girlfriend");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            takeNap();
-        }
-        else if (choice == 2)
-        {
-            watchTv();
-        }
-        else if (choice == 3)
-        {
-            talkGf();
-        }
+        tvStoryText.setText("What would you rather do, go outside or stay inside the lobby ?");
+
+        setAllBtnsVisible();
+        btn1.setText("takeNap");
+        btn2.setText("watchTv");
+        btn3.setVisibility("talkGf");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takeNap();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                watchTv();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                talkGf();
+            }
+        });
     }
 
     private void talkGf()
@@ -196,77 +263,112 @@ public class GameRoyVidal extends GameActivity {
 
     private void goSwimming()
     {
-        System.out.println("\nWhere would you like to go swimming?");
-        System.out.println("1.The hotel pool\n2.The Amazon River");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            inHotel();
-        }
-        else if (choice == 2)
-        {
-            amazonRiver();
-        }
+        tvStoryText.setText("Where would you like to go swimming ?");
+
+        setAllBtnsVisible();
+        btn1.setText("inHotel");
+        btn2.setText("amazonRiver");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { inHotel();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { amazonRiver();}
+        });
     }
 
     private void inHotel()
     {
-        System.out.println("\nWhat Time would you like to go swimming?");
-        System.out.println("1.12PM\n2.9PM");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            infinityPool();
-        }
-        else if (choice == 2)
-        {
-            mainPool();
-        }
+        tvStoryText.setText("Which pool would you like to swim in  ?");
+
+        setAllBtnsVisible();
+        btn1.setText("infinityPool");
+        btn2.setText("mainPool");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { infinityPool();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { mainPool();}
+        });
     }
 
     private void infinityPool()
     {
-        System.out.println("\nWhat Time would you like to go swimming?");
-        System.out.println("1.11AM\n2.10PM");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            elevenAm();
-        }
-        else if (choice == 2)
-        {
-            tenPm();
-        }
+        tvStoryText.setText("What time would you like to go swimming ?");
+
+        setAllBtnsVisible();
+        btn1.setText("elevenAm");
+        btn2.setText("tenPm");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { elevenAm();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { tenPm();}
+        });
     }
 
     private void mainPool()
     {
-        System.out.println("\nWhat Time would you like to go swimming?");
-        System.out.println("1.12PM\n2.9PM");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            twelvePm();
-        }
-        else if (choice == 2)
-        {
-            ninePm();
-        }
+        tvStoryText.setText("What time would you like to go swimming ?");
+
+        setAllBtnsVisible();
+        btn1.setText("twelevePm");
+        btn2.setText("ninePm");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { twelvePm();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { ninePm(); }
+        });
     }
 
     private void amazonRiver()
     {
-        System.out.println("\nWhat Time would you like to go swimming?");
-        System.out.println("1.10AM\n2.1PM");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            tenAm();
-        }
-        else if (choice == 2)
-        {
-            onePm();
-        }
+        tvStoryText.setText("What time would you like to go swimming ?");
+
+        setAllBtnsVisible();
+        btn1.setText("tenAm");
+        btn2.setText("onePm");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { tenAm();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { onePm(); }
+        });
     }
 
     private void elevenAm()
@@ -309,36 +411,50 @@ public class GameRoyVidal extends GameActivity {
 
     private void goExplore()
     {
-        System.out.println("\nWhere would you like to explore?");
-        System.out.println("1.The Town\n2.The Forest\n3.The Zoo ");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            goToTown();
-        }
-        else if (choice == 2)
-        {
-            goToRiver();
-        }
-        else if (choice == 3)
-        {
-            goToZoo();
-        }
+        tvStoryText.setText("Where would you like to explore?");
+
+        setAllBtnsVisible();
+        btn1.setText("goToTown");
+        btn2.setText("goToRiver");
+        btn3.setVisibility("goToZoo");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { goToTown();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { goToRiver(); }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { goToZoo(); }
+        });
     }
 
     private void goToTown()
     {
-        System.out.println("\nDO you want to go shopping or go to the amusement park?");
-        System.out.println("1.$550\n2.$50");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            goShop();
-        }
-        else if (choice == 2)
-        {
-            goAmusement();
-        }
+        tvStoryText.setText("Do you want to go shopping or go to the amusment park ?");
+
+        setAllBtnsVisible();
+        btn1.setText("goShop");
+        btn2.setText("goAmusement");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { tenAm();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { onePm(); }
+        });
     }
 
     private void goShop()
