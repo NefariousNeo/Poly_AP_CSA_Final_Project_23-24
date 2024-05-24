@@ -1,5 +1,7 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.annotation.SuppressLint;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +16,7 @@ public class GameBinghamDaniel extends GameActivity {
     private boolean isWon;
     private int numLives;
 
+    @SuppressLint("SetTextI18n")
     public void run()
     {
         setContentView(R.layout.activity_game_4_button);
@@ -38,37 +41,50 @@ public class GameBinghamDaniel extends GameActivity {
 
         //display project title and description
 
-        String text = "You've finished your freshman year of college and decide to treat yourself to a nice summer vacation. " +
-                      "You decide to go to Japan because you've always wanted to visit there. What happens next is up to you. Good luck!\n";
-        System.out.println(text);
+        tvStoryText.setText("You've finished your freshman year of college and decide to treat yourself to a nice summer vacation. " +
+                      "You decide to go to Japan because you've always wanted to visit there. What happens next is up to you. Good luck!");
+        //System.out.println(text);
         start();
     }
 
+    @SuppressLint("SetTextI18n")
     private void start()
     {
-        System.out.println("Time to visit Japan, where do you want to go visit?");
-        System.out.println("1. Visit Tokyo\n2. Visit Osaka\n3. Visit Kyoto");
-        int choice =
+        tvStoryText.setText("Time to visit Japan, where do you want to go visit?");
+        //tvSubtitle.setText("1. Visit Tokyo\n2. Visit Osaka\n3. Visit Kyoto");
+        //System.out.println("Time to visit Japan, where do you want to go visit?");
+        btn1.setText("Visit Tokyo");
+        btn2.setText("Visit Osaka");
+        btn3.setText("Visit Kyoto");
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToTokyo();
+            }
+        });
 
-        if (choice == 1)
-        {
-            goToTokyo();
-        }
-        else if (choice == 2)
-        {
-            goToOsaka();
-        }
-        else if (choice == 3)
-        {
-            goToKyoto();
-        }
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToOsaka();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToKyoto();
+            }
+        });
     }
 
     //___Tokyo 東京 Path___
     private void goToTokyo()
     {
-        System.out.println("What do you want to do while you are in Tokyo?");
-        System.out.println("1. Head to Akihabara\n2. Go to Tokyo Disneyland\n3. Head to Senso-Ji");
+        tvTitle.setText("Tokyo (東京) Path");
+        tvStoryText.setText("What do you want to do while you are in Tokyo?");
+        //System.out.println("What do you want to do while you are in Tokyo?");
+        //System.out.println("1. Head to Akihabara\n2. Go to Tokyo Disneyland\n3. Head to Senso-Ji");
         int choice =
 
         if (choice == 1)
@@ -88,8 +104,10 @@ public class GameBinghamDaniel extends GameActivity {
     //Akihabara Branch
     private void akihabara()
     {
-        System.out.println("What do you do in Akihabara?");
-        System.out.println("1. Go to a cat cafe\n2. Go to a maid cafe\n3. Embrace your inner otaku/weeb");
+        tvSubtitle.setText("Akihabara Branch");
+        tvStoryText.setText("What do you do in Akihabara?");
+        //System.out.println("What do you do in Akihabara?");
+        //System.out.println("1. Go to a cat cafe\n2. Go to a maid cafe\n3. Embrace your inner otaku/weeb");
         int choice =
 
         if (choice == 1)
@@ -108,20 +126,23 @@ public class GameBinghamDaniel extends GameActivity {
 
     private void catCafe()
     {
-        System.out.println("You have a great time and feel very wholesome petting cats. 猫も可愛いし漫画も読めます");
+        tvStoryText.setText("You have a great time and feel very wholesome petting cats. 猫も可愛いし漫画も読めます");
+        //System.out.println("You have a great time and feel very wholesome petting cats. 猫も可愛いし漫画も読めます");
         start();
     }
 
     private void maidCafe()
     {
-        System.out.println("You feel like you've committed a great sin, but you did have fun. メイドさんは可愛いすぎて、罪が重ねたかもしれないよ");
+        tvStoryText.setText("You feel like you've committed a great sin, but you did have fun. メイドさんは可愛いすぎて、罪が重ねたかもしれないよ");
+        //System.out.println("You feel like you've committed a great sin, but you did have fun. メイドさんは可愛いすぎて、罪が重ねたかもしれないよ");
         defeat();
     }
 
     private void beGaijin()
     {
-        System.out.println("You embrace your inner otaku/weeb:");
-        System.out.println("1. Another tourist calls you out for cultural appropriation\n2. You decide to buy some manga");
+        tvStoryText.setText("You embrace your inner otaku/weeb but then...");
+        //System.out.println("You embrace your inner otaku/weeb but then...");
+        //System.out.println("1. Another tourist calls you out for cultural appropriation\n2. You decide to buy some manga");
         int choice =
 
         if (choice == 1)
