@@ -1,14 +1,20 @@
 package com.poly.polyapcsafinalproject23_24;
 
-import com.poly.polyapcsafinalproject23_24.GameActivity;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import java.util.Scanner;
+import com.poly.polyapcsafinalproject23_24.GameActivity;
 
 public class GameOntiverosMichael extends GameActivity {
 
     /**
      * Player in game
      */
+    private TextView tvHealthVal, tvSleepVal, tvText;
+    private ImageView ivPicture;
+    private Button btnSleep, btnStayUp;
+    private boolean isWon;
     private OntiverosWokePerson player;
 
     /**
@@ -16,6 +22,14 @@ public class GameOntiverosMichael extends GameActivity {
      */
     public void run()
     {
+        tvHealthVal = findViewById(R.id.tv_health_val);
+        tvSleepVal = findViewById(R.id.tv_time_val);
+        tvText = findViewById(R.id.tv_main);
+        ivPicture = findViewById(R.id.iv_main);
+        btnSleep = findViewById(R.id.btn_sleep);
+        btnStayUp = findViewById(R.id.btn_stay_up);
+
+
         createPlayer();
         runSleeper();
     }
@@ -26,8 +40,7 @@ public class GameOntiverosMichael extends GameActivity {
      */
     private void createPlayer()
     {
-        Util.clearConsole();
-        Scanner scan = new Scanner(System.in);
+
         System.out.println("Whats your name?");
         String name = scan.nextLine();
         player = new WokePerson(name, 100, 0);
@@ -60,13 +73,11 @@ public class GameOntiverosMichael extends GameActivity {
      */
     private void displayStats()
     {
-        Util.clearConsole();
         String text =
                 player.getName() +
                         "\nYour Health:\t\t " + player.getHealth() +
                         "\nTime you sleep:\t\t " + player.getTimeHasSleep();
         System.out.println(text);
-        Util.pauseConsole();
 
 
     }
@@ -79,7 +90,6 @@ public class GameOntiverosMichael extends GameActivity {
       2. Stay up
       """;
         System.out.println(text);
-        int option = Util.enterInt(1,2);
         if (option ==1)
         {
             player.goToSleep();
@@ -104,12 +114,8 @@ public class GameOntiverosMichael extends GameActivity {
             System.out.println("Your health is down");
         }
         if (player.getInsanity() == 100)
-            Util.pauseConsole();
-        Util.clearConsole();
         System.out.println("Woah you slept " + player.getTimeHasSleep() + " those are rookie numbers");
-        Util.pauseConsole();
         System.out.println("Do you want to sleep?\n1 Yea, I'm not a loser\n2. Nah, I called it wraps");
-        int option = Util.enterInt(1,2);
         {
             player = new WokePerson(player.getName(),100, 0);
             runSleeper();
