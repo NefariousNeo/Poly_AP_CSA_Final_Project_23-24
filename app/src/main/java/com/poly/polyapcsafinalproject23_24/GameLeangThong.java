@@ -1,60 +1,89 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import java.util.Scanner;
 
 public class GameLeangThong extends GameActivity {
 
-    //instance variables
-    //   variables you plan to use throughout the adventure
-    public Scanner scan;
-    public int numLives;
-    //public Player player; (optional)
+    private TextView tvTitle, tvSubtitle, tvStoryText;
+    private ImageView ivStory;
+    private Button btn1, btn2, btn3;
+    private boolean isWon;
+    private int numLives;
 
+    @Override
+    protected void run() {
+        setContentView(R.layout.activity_game_3_button);
 
-    public void run()
-    {
-        //initialize number of lives
+        tvTitle = findViewById(R.id.tv_title_txt);
+        tvSubtitle = findViewById(R.id.tv_subtitle);
+        tvStoryText = findViewById(R.id.tv_story);
+        ivStory = findViewById(R.id.iv_story);
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+
+        tvTitle.setText("Which pill will you take?");
         numLives = 5;
-        //create a scanner object for user input
-        scan = new Scanner(System.in);
-
-        //create a player object (optional)
-        //player = new Person(...)
         start();
     }
 
+    private void setAllBtnsVisible()
+    {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+    }
+
+
+
     public void start()
     {
-        //display project title and description
-        Util.clearConsole();
-        System.out.println("---Which pill will you take?---");
-        System.out.println("You're a freshmen at a college frat party, a senior offers you three pills. A red, a blue, and a black pill. Which pill will you take?");
-        System.out.println("1. Red Pill\n2. Blue Pill\n3. Black Pill");
 
-        int choice = Util.enterInt(1,3);
-        if (choice == 1)
-        {
-            mountain();
-        }
-        else if (choice == 2)
-        {
-            island();
-        }
-        else if (choice == 3)
-        {
-            war();
-        }
+        isWon = false;
+
+        ivStory.setImageResource(R.drawable.im_laborday_title);
+        playAudio(R.raw.audio_laborday_bass);
+
+        tvStoryText.setText("You're a freshmen at a college frat party, a senior offers you three pills. A red, a blue, and a black pill. Which pill will you take?");
+        setAllBtnsVisible();
+        btn1.setText("Red Pill");
+        btn2.setText("Blue Pill");
+        btn3.setText("Black Pill");
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mountain();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                island();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                war();
+            }
+        });
+
     }
 
     //________Red Pill________
     public void mountain()
     {
         //mountain adventure
-        Util.clearConsole();
         System.out.println("You wake on a desolated rocky mountain, and find a piece of paper in your hand. You read it and it says, Reach the top and a reward awaits you.");
         System.out.println("1. Hike up a path\n2. Climb the mountain");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             hike();
@@ -68,11 +97,9 @@ public class GameLeangThong extends GameActivity {
 
     public void hike()
     {
-        Util.clearConsole();
         System.out.println("While you hike up the colossal mountain you encounter a mountian lion. What do you do?");
         System.out.println("1. Fight \n2. Make a run for it");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             fight();
@@ -85,83 +112,63 @@ public class GameLeangThong extends GameActivity {
 
     public void runAway()
     {
-        Util.clearConsole();
         System.out.println("\nYou're not that guy pal... the mountain lion mauls you.");
-        Util.pauseConsole();
         defeat();
     }
 
     public void fight()
     {
-        Util.clearConsole();
         double luckFight = Math.random();
         if (luckFight <= .5)
         {
             System.out.println("\nYou're not that guy pal... the mountain lion beats you to a pulp.");
-            Util.pauseConsole();
-            Util.clearConsole();
             defeat();
         }
         else
         {
             System.out.println("\nYou found a rocket launcher on the ground and blow up the fierce beast.");
-            Util.pauseConsole();
-            Util.clearConsole();
             bloodLossEnding();
         }
     }
 
     public void bloodLossEnding()
     {
-        Util.clearConsole();
         double luckFight = Math.random();
         if (luckFight > .5 && luckFight <= .75)
         {
             System.out.println("You survived the fight, but die to blood loss... womp womp");
-            Util.pauseConsole();
-            Util.clearConsole();
             defeat();
         }
         else
         {
             System.out.println("You managed to take out the lion without even a scratch");
-            Util.pauseConsole();
-            Util.clearConsole();
             topOfMountain();
         }
     }
 
     public void topOfMountain()
     {
-        Util.clearConsole();
         System.out.println("Congratulations Adventurer!!! Oh wait there's an alter with a purple drink on it. Do you drink it?");
         System.out.println("1. Drink the mysterious lean \n2. Don't drink it (Don't be a prune)");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
-            Util.clearConsole();
             System.out.println("You drink the lean, and black out once again.");
             System.out.println("You wake back up at the party, and the senior offers you the pills again. Which will you take?");
-            Util.pauseConsole();
             start();
         }
         if (choice == 2)
         {
-            Util.clearConsole();
             System.out.println("Guess what... you died to oxygen deprivation (hahahhahahahahahahahhaahahahah)");
-            Util.pauseConsole();
             defeat();
         }
     }
 
     public void climb()
     {
-        Util.clearConsole();
         System.out.println("\nYou decided to scale the mountain");
         System.out.println("1. Take it nice and slow (slowpoke)\n2. Yolo it and rush the climb");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             slowPoke();
@@ -174,30 +181,23 @@ public class GameLeangThong extends GameActivity {
 
     public void slowPoke()
     {
-        Util.clearConsole();
         System.out.println("Well you're no fun, but after 37 hours of climbing slower than a grandma on the highway, you make it to the top.");
-        Util.pauseConsole();
         topOfMountain();
     }
 
     public void yoloClimb()
     {
-        Util.clearConsole();
         System.out.println("You decided to ball out and speedrun climbing the mountain.");
         double chance = Math.random();
 
         if (chance <= .5)
         {
             System.out.println("Well... that was a bad idea you fell and snap both your legs. And some rabid bunnies tickle you to death.");
-            Util.pauseConsole();
-            Util.clearConsole();
             defeat();
         }
         else
         {
             System.out.println("Oh wow you survived the climb... You have reached the top of the mountain!!!");
-            Util.pauseConsole();
-            Util.clearConsole();
             topOfMountain();
         }
     }
@@ -206,11 +206,9 @@ public class GameLeangThong extends GameActivity {
     public void island()
     {
         //mountain adventure
-        Util.clearConsole();
         System.out.println("You wake up in a plane seat of a plane that seemed to have crash on a beach and is also missing its front half. Well anyways you smell some oil and... booooommmmmmmm****, you get sent flying across the beach and slam into a palm tree. You regain consciousness after a few hours and it's about to be night so now you have to find shelter. Where do you go?");
         System.out.println("1. Walk along the coast\n2. Venture into the forest");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             coast();
@@ -224,11 +222,9 @@ public class GameLeangThong extends GameActivity {
 
     public void forest()
     {
-        Util.clearConsole();
         System.out.println("You decided on venturing into the forest. The forest is loud and wet. Mosquitos are going crazy and biting the living out of you. Itchy and afraid you start hearing some familar sounds. The sound of people, you begin rushing to the sound. As your about to reach the sound , you decided to hide in a bush to make sure they're friendly first of all. You see local natives of the natives in a small village living peacefully. Now what will you do?");
         System.out.println("1. Join them (boring) peacefully\n2. Pillage and plunder (embrace inner european)");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             join();
@@ -241,11 +237,9 @@ public class GameLeangThong extends GameActivity {
 
     public void exterminate()
     {
-        Util.clearConsole();
         System.out.println("Well aren't you a genocidal maniac... So how will you approach this massacre? ");
         System.out.println("1. Burn their village to the ground \n2. Fight them barefist");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             arson();
@@ -259,38 +253,29 @@ public class GameLeangThong extends GameActivity {
     public void arson()
     {
         System.out.println("To top it off you're also a Pyromaniac. Well anyways you camp in the bush till night time. After all the villagers fell asleep you begin igniting all their wood houses. As you watch the inferno with the screams of the poor villagers. You seem to have overdone it and the fire is spreading to the trees, but anyways that ain't you're problem so you decide to call it a day and went to sleep.");
-        Util.pauseConsole();
-        Util.clearConsole();
         helicoptor();
     }
 
     public void helicoptor()
     {
-        Util.clearConsole();
         System.out.println("As you wake up from your beauty sleep and you hear the faint sounds of helicoptors, they seemed to have notice the notice the hellfire you caused last night. A helicoptor picks you up and you flies back to the main land");
         System.out.println("However, you see a familar face sitting next to you. It's the senior and he offers you the pills once again. Which will you take?");
-        Util.pauseConsole();
         start();
     }
 
     public void bigMan()
     {
         System.out.println("You leave the bush and get ready to massacre them all with your bare hands, when out came a 7ft tall and jacked up villager from the treelines, ready to throw hands.");
-        Util.pauseConsole();
-        Util.clearConsole();
         double luckFight = Math.random();
         if (luckFight > .5)
         {
             System.out.println(" The giant rams right into you at the speed of 50 mph, sending you ragdolling, as you barely get up he grabs you by the neck and tosses you into the air, then does a flying knee to your spine rendering you crippled. After all that he drags you to an active volcano and launches straight into the molten lava. X_X ");
-            Util.pauseConsole();
-            Util.clearConsole();
             defeat();
         }
         else
         {
             System.out.println("With the power of plot armor and the gun in your pocket you take out the giant man before he could even touched you. After that shortlived battle, the villagers were amazed by your skills and offer you a bowl filled with a purple liquid. Do you drink it?");
             System.out.println("1. Yes (gotta stay hydrated) \n2. No (What if it's poison?) ");
-            int choice = Util.enterInt(1,2);
             if (choice == 1)
             {
                 potion();
@@ -304,11 +289,9 @@ public class GameLeangThong extends GameActivity {
 
     public void join()
     {
-        Util.clearConsole();
         System.out.println("\nYou come out the bush hands in the air, and the natives start screaming and they start blowdarting you. As the 100 tranqs enter your system you immediately knock out. You slowly start waking up after a few days, your legs are completely paralyzed and you're being dragged by the natives. They bring you to a room and throw you into it. Now in front you lays a bowl full of a purple substance. Do you drink it?");
         System.out.println("1. Drink it...What's the worse that could happen?\n2. Don't take it (drugs are bad for you >_<)");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             potion();
@@ -321,28 +304,22 @@ public class GameLeangThong extends GameActivity {
 
     public void potion()
     {
-        Util.clearConsole();
         System.out.println("You drink the mysterious purple substance, and black out once again.");
         System.out.println("You wake back up at the party, and the senior offers you the pills again. Which will you take?");
-        Util.pauseConsole();
         start();
     }
 
     public void noPotion()
     {
-        Util.clearConsole();
         System.out.println("Well you decided not take it. Afterwards, the villagers greeted you as one of their own and you live the rest of your meaningless life as one of them. Shortly after you died to some waterborne disease.");
-        Util.pauseConsole();
         defeat();
     }
 
     public void coast()
     {
-        Util.clearConsole();
         System.out.println("While you walk along the coast, you spot something in the distance and run towards it, only to find a skinwalker eating a sea lion. As you try backing up the stench of your musty clothes gains the attention of the skinwalker and it starts chasing after you. What now?");
         System.out.println("1. Run for dear life \n2. Take your chances with the ocean");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             keepOnRunning();
@@ -355,46 +332,35 @@ public class GameLeangThong extends GameActivity {
 
     public void keepOnRunning()
     {
-        Util.clearConsole();
         double speed = Math.random();
         if (speed <= .5)
         {
             System.out.println("\nShouldn't have been a couch potato... the skinwalker catches you and chomps off your head. Then it procceeds to emote on you.");
-            Util.pauseConsole();
-            Util.clearConsole();
             defeat();
         }
         else
         {
             System.out.println("\nYou somehow managed to outrun the skinwalker... joining the track team was a good decision on your part.");
-            Util.pauseConsole();
-            Util.clearConsole();
             boat();
         }
     }
     public void boat()
     {
-        Util.clearConsole();
         System.out.println("\nAfter running for hours on end you find a boat house. You decide to finally rest after the day you had until you suddenly smell the scent of gas... kabooooommm**** (don't go in other people's houses.)");
-        Util.pauseConsole();
         defeat();
     }
     public void water()
     {
-        Util.clearConsole();
         System.out.println("\nYou really thought that would work?... the skinwalker jumps on top of you and drowns you. Then it teabags on your corpse.");
-        Util.pauseConsole();
         defeat();
     }
 
     //________Black Pill________
     public void war()
     {
-        Util.clearConsole();
         System.out.println("You wake up in a trench, you are in the middle of battle during a blitzkrieg. You also have no weapons on you except for your French uniform. You hear nazi soldiers closing in on you. You gotta make a move now, what will you do?");
         System.out.println("1. Play dead (Too Scawwyy >_<) \n2. Fight the war (BE A MAN) ");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             playDead();
@@ -407,11 +373,9 @@ public class GameLeangThong extends GameActivity {
 
     public void warFight()
     {
-        Util.clearConsole();
         System.out.println("Good job soldier, you made the right choice. Now what is your first line of action?");
         System.out.println("1. Loot a gun from a body (They aint gonna need it anymore) \n2. Hide in a bunker (chat is this guy serious rn) ");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             loot();
@@ -424,11 +388,9 @@ public class GameLeangThong extends GameActivity {
 
     public void loot()
     {
-        Util.clearConsole();
         System.out.println("You let go of your morals and start looting some bodies. !!!!YOU FOUND A LUGER!!!! with one bullet in it only. What's the strategy now?");
         System.out.println("1. Camp (superior tactic) \n2. Get on the offensive");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             camp();
@@ -441,11 +403,9 @@ public class GameLeangThong extends GameActivity {
 
     public void shoot()
     {
-        Util.clearConsole();
         System.out.println("Now that you have yourself a weapon (1 bullet *_*) how are you going to go about winning the war?");
         System.out.println("1. Be strategic and plan first (nerd 0_0) \n2. Go out GUNS BLAZING!!! (One bullet one kill)");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             sniped();
@@ -458,40 +418,31 @@ public class GameLeangThong extends GameActivity {
 
     public void sniped()
     {
-        Util.clearConsole();
         System.out.println("\nYou decided on making a plan, so to start you should get a view of your surroundings. You peak your head outside the trench... you're dead you just got headshotted by a sniper 10 miles away (skill issue).");
-        Util.pauseConsole();
         defeat();
     }
 
     public void tank()
     {
-        Util.clearConsole();
         System.out.println("\nYou don't need a plan you're the main character, so with that you jump out of the trenches and start running across the battlefield, dodging stray bullets with the power of plot armor, and you come across a empty tank. You pilot it and go on a rampage deleting the enemy and your allies. After five filler episodes you finally finish the battle and come out on top.");
-        Util.pauseConsole();
         victory();
     }
 
     public void victory()
     {
-        Util.clearConsole();
         System.out.println("As you celebrate your victory against the Nazis, a portal suddently opens below you sending you into a void of complete darkness, you shortly black out after loss of oxygen.");
         System.out.println("You wake back up at the party, and the senior offers you the pills again. Which will you take?");
-        Util.pauseConsole();
         start();
     }
 
     public void camp()
     {
         System.out.println("You wait silently and patiently for a target to come by. As nazis pass by you take them out one by one then loot them and repeat. And after 4 hours of this process you manage to wipe out the whole enemy squadron leading your nation to victory. (Fortnite Zero Build) ");
-        Util.pauseConsole();
-        Util.clearConsole();
         victory();
     }
 
     public void coward()
     {
-        Util.clearConsole();
         System.out.println("You decide to hide in a bunker till the blitzkriegs ends. (Well I take back what I said you darn sissy)");
         double chance = Math.random();
 
@@ -508,54 +459,41 @@ public class GameLeangThong extends GameActivity {
     public void gas()
     {
         System.out.println("Well... that was a bad idea the Nazis leak some gas bombs inside and you suffocate. (L way to die) ");
-        Util.pauseConsole();
-        Util.clearConsole();
         defeat();
     }
 
     public void allies()
     {
         System.out.println("Whats that... you hear the shooting from outside come to abrupt stop, as you peak your head outside you see that the nazis have left and your allies won. You get to live another day.");
-        Util.pauseConsole();
-        Util.clearConsole();
         sike();
     }
 
     public void sike()
     {
         System.out.println("SIKKKEEEE. You got 360 no scoped by a sniper camping on a hill 5 miles away. X_x skill issue");
-        Util.pauseConsole();
-        Util.clearConsole();
         defeat();
     }
 
     public void playDead()
     {
-        Util.clearConsole();
         double chance = Math.random();
         if (chance >= .5)
         {
             System.out.println("\nYou really thought that would work... the Nazis jump you and beat the living out of you, then they took you to one of their concentration camps");
-            Util.pauseConsole();
-            Util.clearConsole();
             captured();
         }
         else
         {
             System.out.println("\nDue to your immense stealth skills, you managed to appear completely invisible to the soldiers, as they leave you alone, you see an opening to run to the treelines and desert the battle. As you run for dear life you hear your fellow comrades call you a dirty coward.");
-            Util.pauseConsole();
-            Util.clearConsole();
             deserter();
         }
     }
 
     public void deserter()
     {
-        Util.clearConsole();
         System.out.println("You suddenly feel a hit of guilt as your about to desert the battle. Will you go back in the warzone?");
         System.out.println("1. Go back to the war \n2. Nah looking out for #1 only");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             warFight();
@@ -569,18 +507,14 @@ public class GameLeangThong extends GameActivity {
     public void woods()
     {
         System.out.println("\nAs you flee into the forest you reach an abandoned house, and decide to rest on a bed for a sec. Then you started hearing some beeping under it ... kabboooooooommmmm X_X (the house was rigged with explosives >_<) ");
-        Util.pauseConsole();
-        Util.clearConsole();
         defeat();
     }
 
     public void captured()
     {
-        Util.clearConsole();
         System.out.println("Well now you're a war prisoner of the Nazis. They put you in a cell room with an interrogator. They offer you a chance of freedom, if you rat out your comrades. What will you do?");
         System.out.println("1. Rat out your team \n2. Don't snitch on them ");
 
-        int choice = Util.enterInt(1,2);
         if (choice == 1)
         {
             snitch();
@@ -594,44 +528,33 @@ public class GameLeangThong extends GameActivity {
     public void dontSnitch()
     {
         System.out.println("\nGood on you for staying loyal and not betraying your nation... however the Nazis didn't take it so well and they sent you to solitude confinement.");
-        Util.pauseConsole();
-        Util.clearConsole();
         prisoner();
     }
 
     public void snitch()
     {
-        Util.clearConsole();
         double speed = Math.random();
         if (speed <= .5)
         {
             System.out.println("\nYou immediately rat out your whole nation without hesitation.");
-            Util.pauseConsole();
-            Util.clearConsole();
             traitor();
         }
         else
         {
             System.out.println("\nWell you betrayed the nation, and even more you were gullible in thinking the nazis will set you free. The nazis drag you into soilitude confinement.");
-            Util.pauseConsole();
-            Util.clearConsole();
             prisoner();
         }
     }
 
     public void prisoner()
     {
-        Util.clearConsole();
         System.out.println("\nWell well well, aren't you in a tough pickle now. Trapped in a prison cell waiting to starve to death. (you suck as this game)");
-        Util.pauseConsole();
         defeat();
     }
 
     public void traitor()
     {
-        Util.clearConsole();
         System.out.println("\nWell not only did you betray your whole nation, but with your charismatic skills you convinced the Nazis to let you live by switching teams. *_*). However the bomb implanted into your French suit exploded immediately after detecting your act of betrayal.");
-        Util.pauseConsole();
         defeat();
     }
 
