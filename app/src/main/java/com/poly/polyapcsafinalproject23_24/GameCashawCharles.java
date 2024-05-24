@@ -1,6 +1,9 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class GameCashawCharles extends GameActivity {
 
@@ -9,11 +12,12 @@ public class GameCashawCharles extends GameActivity {
     /**
      *  gymhead in game
      */
-    private GymHead gymhead;
+    private CashawGymhead gymhead;
 
-    private TextView tvTitle, tvSubtitle, tvStoryText;
-    private ImageView ivStory;
-    private Button btn1, btn2, btn3, btn4;
+    private TextView tvMain;
+    private ImageView ivMain;
+    private Button btnPushUp, btnPullUp, btnSitUp, btnSquat;
+
 
     //write game down here
     //  use other void methods as nesssary
@@ -26,16 +30,13 @@ public class GameCashawCharles extends GameActivity {
     {
         setContentView(R.layout.activity_game_4_button);
 
-        tvTitle = findViewById(R.id.tv_title_txt);
-        tvSubtitle = findViewById(R.id.tv_subtitle);
-        tvStoryText = findViewById(R.id.tv_story);
-        ivStory = findViewById(R.id.iv_story);
-        btn1 = findViewById(R.id.btn_1);
-        btn2 = findViewById(R.id.btn_2);
-        btn3 = findViewById(R.id.btn_3);
-        btn4 = findViewById(R.id.btn_4);
-        tvTitle.setText("WORKOUT");
-        tvSubtitle.setText("");
+        tvMain = findViewById(R.id.tv_main);
+        ivMain = findViewById(R.id.iv_main);
+        btnPushUp = findViewById(R.id.btn_pushup);
+        btnPullUp = findViewById(R.id.btn_pullup);
+        btnSitUp = findViewById(R.id.btn_situp);
+        btnSquat = findViewById(R.id.btn_squat);
+
         createGymhead();
         runWorkout();
     }
@@ -52,10 +53,8 @@ public class GameCashawCharles extends GameActivity {
      */
     private void createGymhead()
     {
-        Scanner scan = new Scanner(System.in);
         System.out.println("Whats your name?");
-        String name = scan.nextLine();
-        gymhead = new GymHead(name);
+        gymhead = new CashawGymhead("DEFAULT");
     }
 
     /**
@@ -80,6 +79,10 @@ public class GameCashawCharles extends GameActivity {
      */
     private void displayStats()
     {
+        tvSquatValue.setText(gymhead.getSquats());
+        tvPullUpValue.setText(gymhead.getPullUps());
+        tvPushUpValue.setText(gymhead.getPushUps());
+        tvSitUpValue.setText(gymhead.getSitUps());
         String text =
                 gymhead.getName() +
                         "\nPull ups done:\t\t" + gymhead.getPullUps() +
