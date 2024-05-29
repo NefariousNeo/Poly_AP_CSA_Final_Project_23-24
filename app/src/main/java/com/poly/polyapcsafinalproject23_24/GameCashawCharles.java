@@ -1,6 +1,7 @@
 package com.poly.polyapcsafinalproject23_24;
 
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,10 +15,9 @@ public class GameCashawCharles extends GameActivity {
      */
     private CashawGymhead gymhead;
 
-    private TextView tvMain;
+    private TextView tvMain, tvPushUpVal, tvPullUpVal, tvSitUpVal, tvSquatVal;
     private ImageView ivMain;
     private Button btnPushUp, btnPullUp, btnSitUp, btnSquat;
-
 
     //write game down here
     //  use other void methods as nesssary
@@ -28,7 +28,7 @@ public class GameCashawCharles extends GameActivity {
     @Override
     public void run()
     {
-        setContentView(R.layout.activity_game_4_button);
+        setContentView(R.layout.activity_cashaw_main);
 
         tvMain = findViewById(R.id.tv_main);
         ivMain = findViewById(R.id.iv_main);
@@ -37,13 +37,22 @@ public class GameCashawCharles extends GameActivity {
         btnSitUp = findViewById(R.id.btn_situp);
         btnSquat = findViewById(R.id.btn_squat);
 
+        tvPushUpVal = findViewById(R.id.tv_pushup_value);
+        tvPullUpVal = findViewById(R.id.tv_pullup_value);
+        tvSitUpVal = findViewById(R.id.tv_situp_value);
+        tvSquatVal = findViewById(R.id.tv_squat_value);
+
         createGymhead();
         runWorkout();
     }
 
-    public void beginWorkout()
-    {
 
+    private void setAllBtnsVisisble()
+    {
+        btnPushUp.setVisibility(View.VISIBLE);
+        btnPullUp.setVisibility(View.VISIBLE);
+        btnSitUp.setVisibility(View.VISIBLE);
+        btnSquat.setVisibility(View.VISIBLE);
     }
 
 
@@ -64,13 +73,16 @@ public class GameCashawCharles extends GameActivity {
      */
     private void runWorkout()
     {
-        beginWorkout();
-        while (gymhead.getWorkoutDone() < gymhead.getMaxWorkout() )
+        if (gymhead.getWorkoutDone() < gymhead.getMaxWorkout())
         {
             displayStats();
             chooseOption();
         }
-        endOfWorkout();
+        else
+        {
+            endOfWorkout();
+        }
+
     }
 
 
@@ -79,10 +91,10 @@ public class GameCashawCharles extends GameActivity {
      */
     private void displayStats()
     {
-        tvSquatValue.setText(gymhead.getSquats());
-        tvPullUpValue.setText(gymhead.getPullUps());
-        tvPushUpValue.setText(gymhead.getPushUps());
-        tvSitUpValue.setText(gymhead.getSitUps());
+        tvSquatVal.setText(""+gymhead.getSquats());
+        tvPullUpVal.setText(""+gymhead.getPullUps());
+        tvPushUpVal.setText(""+gymhead.getPushUps());
+        tvSitUpVal.setText(""+gymhead.getSitUps());
         String text =
                 gymhead.getName() +
                         "\nPull ups done:\t\t" + gymhead.getPullUps() +
@@ -97,30 +109,45 @@ public class GameCashawCharles extends GameActivity {
      */
     private void chooseOption()
     {
-        String text = """
-      What exercise do you want to do?
-      1. Pull up
-      2. Push up
-      3. Squat
-      4. Sit up
-      """;
-        System.out.println(text);
-        if (option == 1)
-        {
-            gymhead.doPullUp();
-        }
-        else if (option == 2)
-        {
-            gymhead.doPushUp();
-        }
-        if (option == 3)
-        {
-            gymhead.doSquats();
-        }
-        else if (option == 4)
-        {
-            gymhead.doSitUps();
-        }
+        setAllBtnsVisisble();
+        btnPushUp.setText("pushup");
+        btnPullUp.setText("pullup");
+        btnSitUp.setText("sit-up");
+        btnSquat.setText("squat");
+        btnPushUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gymhead.doPullUp();
+                runWorkout();
+            }
+        });
+
+        btnPullUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gymhead.doPushUp();
+                runWorkout();
+
+            }
+        });
+
+        btnSitUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gymhead.doSquats();
+                runWorkout();
+
+            }
+        });
+
+        btnSquat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gymhead.doSitUps();
+                runWorkout();
+
+            }
+        });
     }
 
     /**
@@ -130,6 +157,11 @@ public class GameCashawCharles extends GameActivity {
      */
     private void endOfWorkout()
     {
+
+        btnPushUp.setVisibility(View.INVISIBLE);
+        btnPullUp.setVisibility(View.INVISIBLE);
+        btnSitUp.setVisibility(View.INVISIBLE);
+
         if (gymhead.getWorkoutDone() >= gymhead.getMaxWorkout())
         {
             System.out.println("Workout done!");
@@ -139,11 +171,14 @@ public class GameCashawCharles extends GameActivity {
 
         System.out.println("Workout again?\n1. YES\n2. NO!");
 
-        if (option == 1)
-        {
-            gymhead = new GymHead(gymhead.getName());
-            runWorkout();
-        }
+        btnSquat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gymhead = new CashawGymhead(gymhead.getName());
+                runWorkout();
+
+            }
+        });
     }
 
 
