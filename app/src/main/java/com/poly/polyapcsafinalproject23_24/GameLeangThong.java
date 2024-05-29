@@ -81,39 +81,77 @@ public class GameLeangThong extends GameActivity {
     public void mountain()
     {
         //mountain adventure
-        System.out.println("You wake on a desolated rocky mountain, and find a piece of paper in your hand. You read it and it says, Reach the top and a reward awaits you.");
-        System.out.println("1. Hike up a path\n2. Climb the mountain");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            hike();
-        }
-        else if (choice == 2)
-        {
-            climb();
-        }
+        tvStoryText.setText("You wake on a desolated rocky mountain, and find a piece of paper in your hand. You read it and it says, Reach the top and a reward awaits you.");
+
+        setAllBtnsVisible();
+
+        setAllBtnsVisible();
+        btn1.setText("Hike up a path");
+        btn2.setText("Climb the mountain");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { hike();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                climb();
+            }
+        });
+
 
     }
 
     public void hike()
     {
-        System.out.println("While you hike up the colossal mountain you encounter a mountian lion. What do you do?");
-        System.out.println("1. Fight \n2. Make a run for it");
+        tvStoryText.setText("While you hike up the colossal mountain you encounter a mountain lion. What do you do?");
 
-        if (choice == 1)
-        {
-            fight();
-        }
-        else if (choice == 2)
-        {
-            runAway();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+
+        setAllBtnsVisible();
+        btn1.setText("Fight");
+        btn2.setText("Make a run for it");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fight();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                runAway();
+            }
+        });
+
     }
 
     public void runAway()
     {
-        System.out.println("\nYou're not that guy pal... the mountain lion mauls you.");
-        defeat();
+        tvStoryText.setText("You're not that guy pal... the mountain lion mauls you.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+
+        setAllBtnsVisible();
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                defeat();
+            }
+        });
+
     }
 
     public void fight()
@@ -121,13 +159,39 @@ public class GameLeangThong extends GameActivity {
         double luckFight = Math.random();
         if (luckFight <= .5)
         {
-            System.out.println("\nYou're not that guy pal... the mountain lion beats you to a pulp.");
-            defeat();
+            tvStoryText.setText("You're not that guy pal... the mountain lion beats you to a pulp.");
+
+            ivStory.setImageResource(R.drawable.im_laborday_swimming);
+
+            setAllBtnsVisible();
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    defeat();
+                }
+            });
         }
         else
         {
-            System.out.println("\nYou found a rocket launcher on the ground and blow up the fierce beast.");
-            bloodLossEnding();
+            tvStoryText.setText("You found a rocket launcher on the ground and blow up the fierce beast.");
+
+            ivStory.setImageResource(R.drawable.im_laborday_swimming);
+
+            setAllBtnsVisible();
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    bloodLossEnding();
+                }
+            });
         }
     }
 
@@ -136,32 +200,84 @@ public class GameLeangThong extends GameActivity {
         double luckFight = Math.random();
         if (luckFight > .5 && luckFight <= .75)
         {
-            System.out.println("You survived the fight, but die to blood loss... womp womp");
-            defeat();
+            tvStoryText.setText("You survived the fight, but die to blood loss... womp womp");
+
+            ivStory.setImageResource(R.drawable.im_laborday_swimming);
+
+            setAllBtnsVisible();
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    defeat();
+                }
+            });
         }
         else
         {
-            System.out.println("You managed to take out the lion without even a scratch");
-            topOfMountain();
+            tvStoryText.setText("You managed to take out the lion without even a scratch");
+
+            ivStory.setImageResource(R.drawable.im_laborday_swimming);
+
+            setAllBtnsVisible();
+            btn1.setText("Continue");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    topOfMountain();
+                }
+            });
         }
     }
 
     public void topOfMountain()
     {
-        System.out.println("Congratulations Adventurer!!! Oh wait there's an alter with a purple drink on it. Do you drink it?");
-        System.out.println("1. Drink the mysterious lean \n2. Don't drink it (Don't be a prune)");
+        tvStoryText.setText("Congratulations Adventurer!!! Oh wait there's an alter with a purple drink on it. Do you drink it?");
 
-        if (choice == 1)
-        {
-            System.out.println("You drink the lean, and black out once again.");
-            System.out.println("You wake back up at the party, and the senior offers you the pills again. Which will you take?");
-            start();
-        }
-        if (choice == 2)
-        {
-            System.out.println("Guess what... you died to oxygen deprivation (hahahhahahahahahahahhaahahahah)");
-            defeat();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_arrive_at_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("Drink the mysterious lean");
+        btn2.setText("Don't drink it (Don't be a prune)");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                tvStoryText.setText("You drink the lean, and black out once again. You wake back up at the party, and the senior offers you the pills again. Which will you take?");
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        start();
+                    }
+                });
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                tvStoryText.setText("Guess what... you died to oxygen deprivation (hahahhahahahahahahahhaahahahah)");
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        defeat();
+                     }
+                });
+            }
+        });
+
     }
 
     public void climb()
@@ -169,144 +285,301 @@ public class GameLeangThong extends GameActivity {
         System.out.println("\nYou decided to scale the mountain");
         System.out.println("1. Take it nice and slow (slowpoke)\n2. Yolo it and rush the climb");
 
-        if (choice == 1)
-        {
-            slowPoke();
-        }
-        if (choice == 2)
-        {
-            yoloClimb();
-        }
+        tvStoryText.setText("You decided to scale the mountain");
+
+        ivStory.setImageResource(R.drawable.im_laborday_arrive_at_beach);
+
+        setAllBtnsVisible();
+        btn1.setText("Take it nice and slow (slowpoke)");
+        btn2.setText("Yolo it and rush the climb\"");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                slowPoke();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { yoloClimb(); }
+        });
     }
 
     public void slowPoke()
     {
-        System.out.println("Well you're no fun, but after 37 hours of climbing slower than a grandma on the highway, you make it to the top.");
-        topOfMountain();
+        tvStoryText.setText("Well you're no fun, but after 37 hours of climbing slower than a grandma on the highway, you make it to the top.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                topOfMountain();
+            }
+        });
     }
 
     public void yoloClimb()
     {
-        System.out.println("You decided to ball out and speedrun climbing the mountain.");
+        tvStoryText.setText("You decided to ball out and speedrun climbing the mountain.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
         double chance = Math.random();
 
         if (chance <= .5)
         {
-            System.out.println("Well... that was a bad idea you fell and snap both your legs. And some rabid bunnies tickle you to death.");
-            defeat();
+            tvStoryText.setText("Well... that was a bad idea you fell and snap both your legs. And some rabid bunnies tickle you to death.");
+
+            ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+            });
         }
         else
         {
-            System.out.println("Oh wow you survived the climb... You have reached the top of the mountain!!!");
-            topOfMountain();
+            tvStoryText.setText("Oh wow you survived the climb... You have reached the top of the mountain!!!");
+
+            ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    topOfMountain();
+                }
+            });
         }
     }
 
     //________Blue Pill________
     public void island()
     {
-        //mountain adventure
-        System.out.println("You wake up in a plane seat of a plane that seemed to have crash on a beach and is also missing its front half. Well anyways you smell some oil and... booooommmmmmmm****, you get sent flying across the beach and slam into a palm tree. You regain consciousness after a few hours and it's about to be night so now you have to find shelter. Where do you go?");
-        System.out.println("1. Walk along the coast\n2. Venture into the forest");
+        //island adventure
+        tvStoryText.setText("You wake up in a plane seat of a plane that seemed to have crash on a beach and is also missing its front half. Well anyways you smell some oil and... booooommmmmmmm****, you get sent flying across the beach and slam into a palm tree. You regain consciousness after a few hours and it's about to be night so now you have to find shelter. Where do you go?");
 
-        if (choice == 1)
-        {
-            coast();
-        }
-        else if (choice == 2)
-        {
-            forest();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+
+        setAllBtnsVisible();
+        btn1.setText("Walk along the coast");
+        btn2.setText("Venture into the forest");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                coast();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                forest();
+            }
+        });
 
     }
 
     public void forest()
     {
-        System.out.println("You decided on venturing into the forest. The forest is loud and wet. Mosquitos are going crazy and biting the living out of you. Itchy and afraid you start hearing some familar sounds. The sound of people, you begin rushing to the sound. As your about to reach the sound , you decided to hide in a bush to make sure they're friendly first of all. You see local natives of the natives in a small village living peacefully. Now what will you do?");
-        System.out.println("1. Join them (boring) peacefully\n2. Pillage and plunder (embrace inner european)");
+        tvStoryText.setText("You decided on venturing into the forest. The forest is loud and wet. Mosquitoes are going crazy and biting the living out of you. Itchy and afraid you start hearing some familar sounds. The sound of people, you begin rushing to the sound. As your about to reach the sound , you decided to hide in a bush to make sure they're friendly first of all. You see local natives of the natives in a small village living peacefully. Now what will you do?");
 
-        if (choice == 1)
-        {
-            join();
-        }
-        else if (choice == 2)
-        {
-            exterminate();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Join them (boring) peacefully");
+        btn2.setText("Pillage and plunder (embrace inner european)");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                join();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exterminate();
+            }
+        });
     }
 
     public void exterminate()
     {
-        System.out.println("Well aren't you a genocidal maniac... So how will you approach this massacre? ");
-        System.out.println("1. Burn their village to the ground \n2. Fight them barefist");
+        tvStoryText.setText("Well aren't you a genocidal maniac... So how will you approach this massacre? ");
 
-        if (choice == 1)
-        {
-            arson();
-        }
-        else if (choice == 2)
-        {
-            bigMan();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Burn their village to the ground");
+        btn2.setText("Fight them barefist");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                arson();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bigMan();
+            }
+        });
     }
 
     public void arson()
     {
-        System.out.println("To top it off you're also a Pyromaniac. Well anyways you camp in the bush till night time. After all the villagers fell asleep you begin igniting all their wood houses. As you watch the inferno with the screams of the poor villagers. You seem to have overdone it and the fire is spreading to the trees, but anyways that ain't you're problem so you decide to call it a day and went to sleep.");
-        helicoptor();
+        tvStoryText.setText("To top it off you're also a Pyromaniac. Well anyways you camp in the bush till night time. After all the villagers fell asleep you begin igniting all their wood houses. As you watch the inferno with the screams of the poor villagers. You seem to have overdone it and the fire is spreading to the trees, but anyways that ain't you're problem so you decide to call it a day and went to sleep.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { helicoptor(); }
+        });
     }
 
     public void helicoptor()
     {
-        System.out.println("As you wake up from your beauty sleep and you hear the faint sounds of helicoptors, they seemed to have notice the notice the hellfire you caused last night. A helicoptor picks you up and you flies back to the main land");
-        System.out.println("However, you see a familar face sitting next to you. It's the senior and he offers you the pills once again. Which will you take?");
-        start();
+        tvStoryText.setText("As you wake up from your beauty sleep and you hear the faint sounds of helicoptors, they seemed to have notice the notice the hellfire you caused last night. A helicoptor picks you up and you flies back to the main land. However, you see a familar face sitting next to you. It's the senior and he offers you the pills once again. Which will you take?");
+
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { start(); }
+        });
     }
 
     public void bigMan()
     {
-        System.out.println("You leave the bush and get ready to massacre them all with your bare hands, when out came a 7ft tall and jacked up villager from the treelines, ready to throw hands.");
+        tvStoryText.setText("You leave the bush and get ready to massacre them all with your bare hands, when out came a 7ft tall and jacked up villager from the treelines, ready to throw hands.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
         double luckFight = Math.random();
         if (luckFight > .5)
         {
-            System.out.println(" The giant rams right into you at the speed of 50 mph, sending you ragdolling, as you barely get up he grabs you by the neck and tosses you into the air, then does a flying knee to your spine rendering you crippled. After all that he drags you to an active volcano and launches straight into the molten lava. X_X ");
-            defeat();
+            tvStoryText.setText("The giant rams right into you at the speed of 50 mph, sending you ragdolling, as you barely get up he grabs you by the neck and tosses you into the air, then does a flying knee to your spine rendering you crippled. After all that he drags you to an active volcano and launches straight into the molten lava. X_X");
+
+            ivStory.setImageResource(R.drawable.im_laborday_rain);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    defeat();
+                }
+            });
         }
         else
         {
-            System.out.println("With the power of plot armor and the gun in your pocket you take out the giant man before he could even touched you. After that shortlived battle, the villagers were amazed by your skills and offer you a bowl filled with a purple liquid. Do you drink it?");
-            System.out.println("1. Yes (gotta stay hydrated) \n2. No (What if it's poison?) ");
-            if (choice == 1)
-            {
-                potion();
-            }
-            else if (choice == 2)
-            {
-                noPotion();
-            }
+            tvStoryText.setText("With the power of plot armor and the gun in your pocket you take out the giant man before he could even touched you. After that shortlived battle, the villagers were amazed by your skills and offer you a bowl filled with a purple liquid. Do you drink it?");
+
+            ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+
+            setAllBtnsVisible();
+            btn1.setText("Yes (gotta stay hydrated)");
+            btn2.setText("No (What if it's poison?)");
+            btn3.setVisibility(View.INVISIBLE);
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    potion();
+                }
+            });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    noPotion();
+                }
+            });
         }
     }
 
     public void join()
     {
-        System.out.println("\nYou come out the bush hands in the air, and the natives start screaming and they start blowdarting you. As the 100 tranqs enter your system you immediately knock out. You slowly start waking up after a few days, your legs are completely paralyzed and you're being dragged by the natives. They bring you to a room and throw you into it. Now in front you lays a bowl full of a purple substance. Do you drink it?");
-        System.out.println("1. Drink it...What's the worse that could happen?\n2. Don't take it (drugs are bad for you >_<)");
+        tvStoryText.setText("You come out the bush hands in the air, and the natives start screaming and they start blowdarting you. As the 100 tranqs enter your system you immediately knock out. You slowly start waking up after a few days, your legs are completely paralyzed and you're being dragged by the natives. They bring you to a room and throw you into it. Now in front you lays a bowl full of a purple substance. Do you drink it?");
 
-        if (choice == 1)
-        {
-            potion();
-        }
-        if (choice == 2)
-        {
-            noPotion();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Drink it...What's the worse that could happen?");
+        btn2.setText("Don't take it (drugs are bad for you >_<)");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                potion();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                noPotion();
+            }
+        });
     }
 
     public void potion()
     {
-        System.out.println("You drink the mysterious purple substance, and black out once again.");
-        System.out.println("You wake back up at the party, and the senior offers you the pills again. Which will you take?");
-        start();
+        tvStoryText.setText("You drink the mysterious purple substance, and black out once again. You wake back up at the party, and the senior offers you the pills again. Which will you take?");
+
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                start();
+            }
+        });
     }
 
     public void noPotion()
