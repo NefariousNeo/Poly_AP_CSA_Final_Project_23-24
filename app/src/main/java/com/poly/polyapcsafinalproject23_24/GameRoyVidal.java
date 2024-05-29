@@ -221,42 +221,145 @@ public class GameRoyVidal extends GameActivity {
 
     private void talkGf()
     {
-        System.out.println("\n You and your GirlFriend get into an argument. She shoots you because she is crazy.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("You and your crazy Grilfriend get into an argument." +
+                " She shoots you because she is crazy. Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
     private void eightBall()
     {
-        System.out.println("\n You beat everyone at 8ball, but start a bar fight for talking trash. You are thrown out.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("You beat everyone at 8ball, but start a bar fight for talking trash. " +
+                "You are thrown out");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
     private void blackJack()
     {
-        System.out.println("\n You get caught cheating in blackjack and are thrown out.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("You get caught cheating in blackjack and are thrown out");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
 
     private void playBasketball()
     {
-        System.out.println("\n You play basketball and you get your ankles broken by lebron james. You can't continue your vacation.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("You play basketball and you get your ankles broken by lebron james" +
+                "You can't continue your vacation");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void playFootball()
     {
-        System.out.println("\n You play football and hit-sticked by Raw Lewis. You have a concussion and can't continue your vacation.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("You play football and get hit-sticked by Raw Lewis. " +
+                "You have a concussion. Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void takeNap()
     {
-        System.out.println("\n You took too much melatonin and you are in a coma now. You can't continue your vacation.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("You took too much melatonin and you are in a coma now. Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
     private void watchTv()
     {
-        System.out.println("\n The Burgers werent cooked correctly, you now have a stomach virus and you can't continue your vacation.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("The burgers werent cooked correctly, you now " +
+                "have a stomach virus. Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     //OPTION 2 ________________________________________________________
@@ -373,38 +476,126 @@ public class GameRoyVidal extends GameActivity {
 
     private void elevenAm()
     {
-        System.out.println("\n There was too many people in the pool and You fall over the edge. You can't continue your vacation.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("There is too many people in the pool at this time and you " +
+                "fall over the edge. Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void tenPm()
     {
-        System.out.println("\n People steal your items and you have no money to survive. It was to dark out to see anything. You can't continue your vacation.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("people steal your items and you have no money to survive. " +
+                "It was to dark to see anything. Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void twelvePm()
     {
-        System.out.println("\n There was too many people in the pool and you got stuck underwater and drowned. You can't continue your vacation.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("There was to many people in the pool and you got stuck " +
+                "underwater and drowned Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void ninePm()
     {
-        System.out.println("\n You Drown Because there was no lifeguard on duty this late. You can't continue your vacation.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("You drown because there is no lifeguard on duty this late Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void tenAm()
     {
-        System.out.println("\nHunters rob you on the way to the river. You can't continue your vacation.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("Hunters rob you on the way to the river" +
+                " Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     private void onePm()
     {
-        System.out.println("\nYou get attacked by piranhas in the amazon river. You can't continue your vacation.");
-        defeat();
+        isWon = false;
+        tvStoryText.setText("You get attacked by piranhas in the amazon river. Game over.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_tan20);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                end();
+            }
+        });
     }
 
     //OPTION 3 __________________________________________________________________
@@ -459,122 +650,178 @@ public class GameRoyVidal extends GameActivity {
 
     private void goShop()
     {
-        System.out.println("\nHow much money would you like to bring to town?");
-        System.out.println("1.$550\n2.$50");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            bringExtra();
-        }
-        else if (choice == 2)
-        {
-            bringLess();
-        }
+        tvStoryText.setText("How much money would you like to bring to town ?");
+
+        setAllBtnsVisible();
+        btn1.setText("bringExtra");
+        btn2.setText("bringLess");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { bringExtra();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { bringLess();  }
+        });
     }
     private void goAmusement()
     {
-        System.out.println("\nDo you want to get food at the Amusement Park?");
-        System.out.println("1.Yes\n2.No");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            getFood();
-        }
-        else if (choice == 2)
-        {
-            noFood();
-        }
+        tvStoryText.setText("Do you want to get food at the Amusement park ?");
+
+        setAllBtnsVisible();
+        btn1.setText("getFood");
+        btn2.setText("noFood");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { getFood();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { noFood(); }
+        });
     }
     private void getFood()
     {
-        System.out.println("\nHow much food do you want to eat. A Combo Meal or a snack?");
-        System.out.println("1.Combo\n2.Snack");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            getCombo();
-        }
-        else if (choice == 2)
-        {
-            getSnack();
-        }
+        tvStoryText.setText("How much food do you want to eat ?");
+
+        setAllBtnsVisible();
+        btn1.setText("getCombo");
+        btn2.setText("getSnack");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {getCombo (); }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { getSnack (); }
+        });
     }
 
     private void noFood()
     {
-        System.out.println("\nDo you still want something to drink or no ?");
-        System.out.println("1.Yes\n2.No");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            getDrink();
-        }
-        else if (choice == 2)
-        {
-            getNoDrink();
-        }
+        tvStoryText.setText("Do you still want something to drink or no?");
+
+        setAllBtnsVisible();
+        btn1.setText("getDrink");
+        btn2.setText("getNoDrink");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { getDrink(); }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { getNoDrink (); }
+        });
     }
 
     private void goToZoo()
     {
-        System.out.println("\nDo you want to get food at the zoo or go straight to the bird exibit?");
-        System.out.println("1.Food\n2.Birds");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            getZooFood();
-        }
-        else if (choice == 2)
-        {
-            goToBirds();
-        }
+        tvStoryText.setText("Do you want to get food at the zoo or go straight to the bird exibit");
+
+        setAllBtnsVisible();
+        btn1.setText("getZooFood");
+        btn2.setText("goToBirds");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { getZooFood();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { goToBirds();}
+        });
     }
 
     private void getZooFood()
     {
-        System.out.println("\nDo you want to eat a chicken sandwhich or have a burger?");
-        System.out.println("1.Chicken Sandwhich \n2.Burger");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            getChicken();
-        }
-        else if (choice == 2)
-        {
-            getBurger();
-        }
+        tvStoryText.setText("Do you want to eat a chicken sandwhich or have a burger?");
+
+        setAllBtnsVisible();
+        btn1.setText("getChicken");
+        btn2.setText("getBurger");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { getChicken();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { getBurger();}
+        });
     }
 
 
 
     private void goToRiver()
     {
-        System.out.println("\nWould you rather follow the trail ahead or go back?");
-        System.out.println("1.Follow the trail\n2.Go back");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            followTrail();
-        }
-        else if (choice == 2)
-        {
-            goBack();
-        }
+        tvStoryText.setText("Would you rather follow the trail ahead or go back?");
+
+        setAllBtnsVisible();
+        btn1.setText("followTrail");
+        btn2.setText("goBack");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { followTrail();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { goBack();}
+        });
     }
 
     private void followTrail()
     {
-        System.out.println("\nWould you rather go on a paid tour of the rainforest or go on your own?");
-        System.out.println("1.Go hiking on your own \n2.Go on the paid tour");
+        ivStory.setImageResource(R.drawable.im_laborday_beach);
 
-        if (choice == 1)
-        {
-            youWin();
-        }
-        else if (choice == 2)
-        {
-            goOnTour();
-        }
+        tvStoryText.setText("Would you rather go on a paid tour of the rainforest or go on your own?");
+
+        setAllBtnsVisible();
+        btn1.setText("On Your Own");
+        btn2.setText("goOnTour");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { youWin();}
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { goOnTour();}
+        });
     }
 
     private void getCombo()
