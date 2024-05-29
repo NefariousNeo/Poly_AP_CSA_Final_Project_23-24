@@ -1,5 +1,8 @@
 package com.poly.polyapcsafinalproject23_24;
 
+import android.content.Context;
+import android.content.Intent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +19,7 @@ public class GameOntiverosMichael extends GameActivity {
     private Button btnSleep, btnStayUp;
     private boolean isWon;
     private OntiverosWokePerson player;
+    private Context context;
 
     /**
      * Method that runs the game. Calls createPlayer() and runSleeper()
@@ -29,22 +33,11 @@ public class GameOntiverosMichael extends GameActivity {
         btnSleep = findViewById(R.id.btn_sleep);
         btnStayUp = findViewById(R.id.btn_stay_up);
 
+        player = new OntiverosWokePerson("Person",100,0);
 
-        createPlayer();
         runSleeper();
     }
 
-    /**
-     * Method that creates the player. Method asks for users nam and uses
-     * its to create sleepers
-     */
-    private void createPlayer()
-    {
-
-        System.out.println("Whats your name?");
-        String name = scan.nextLine();
-        player = new WokePerson(name, 100, 0);
-    }
 
     /**
      * Method that runs game. The game run in a loop again where player
@@ -54,17 +47,15 @@ public class GameOntiverosMichael extends GameActivity {
      */
     private void runSleeper()
     {
-        beginToSleep();
-        while (player.getInsanity() < 100 && player.getHealth() > 0)
+        if (player.getInsanity() < 100 && player.getHealth() > 0)
         {
             displayStats();
             chooseOption();
         }
-        endOfSleeper();
-    }
-
-    private void beginToSleep()
-    {
+        else
+        {
+            endOfSleeper();
+        }
 
     }
 
@@ -73,31 +64,28 @@ public class GameOntiverosMichael extends GameActivity {
      */
     private void displayStats()
     {
-        String text =
-                player.getName() +
-                        "\nYour Health:\t\t " + player.getHealth() +
-                        "\nTime you sleep:\t\t " + player.getTimeHasSleep();
-        System.out.println(text);
-
-
+        tvHealthVal.setText("" + player.getHealth());
+        tvSleepVal.setText(""+ player.getTimeHasSleep());
     }
 
     private void chooseOption()
     {
-        String text = """
-      What do you want to do now?
-      1. Go to sleep
-      2. Stay up
-      """;
-        System.out.println(text);
-        if (option ==1)
-        {
-            player.goToSleep();
-        }
-        else if (option == 2)
-        {
-            player.stayUp();
-        }
+
+        btnSleep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player.goToSleep();
+                runSleeper();
+            }
+        });
+        btnStayUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player.stayUp();
+                runSleeper();
+            }
+        });
+
     }
 
 
@@ -111,14 +99,32 @@ public class GameOntiverosMichael extends GameActivity {
     {
         if (player.getHealth() == 0)
         {
-            System.out.println("Your health is down");
+            tvText.setText("Your health is down");
+
         }
         if (player.getInsanity() == 100)
-        System.out.println("Woah you slept " + player.getTimeHasSleep() + " those are rookie numbers");
-        System.out.println("Do you want to sleep?\n1 Yea, I'm not a loser\n2. Nah, I called it wraps");
         {
-            player = new WokePerson(player.getName(),100, 0);
-            runSleeper();
+            tvText.setText("Woah you slept " + player.getTimeHasSleep() + " those are rookie numbers\n\n" +
+                    "Do you want to sleep?");
+
+            btnSleep.setText("Yea, I'm not a loser");
+            btnStayUp.setText("Nah, I called it wraps");
+
+            btnSleep.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    player = new OntiverosWokePerson(player.getName(),100, 0);
+                    runSleeper();
+                }
+            });
+
+            btnStayUp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(GameOntiverosMichael.this, ChooseGameFragment.class));
+                }
+            });
+
         }
     }
 
