@@ -46,8 +46,7 @@ public class GameLeangThong extends GameActivity {
 
         isWon = false;
 
-        ivStory.setImageResource(R.drawable.im_laborday_title);
-        playAudio(R.raw.audio_laborday_bass);
+        ivStory.setImageResource(R.drawable.pill);
 
         tvStoryText.setText("You're a freshmen at a college frat party, a senior offers you three pills. A red, a blue, and a black pill. Which pill will you take?");
         setAllBtnsVisible();
@@ -81,7 +80,7 @@ public class GameLeangThong extends GameActivity {
     public void mountain()
     {
         //mountain adventure
-        ivStory.setImageResource(R.drawable.im_laborday_beach);
+        ivStory.setImageResource(R.drawable.mountain);
 
         tvStoryText.setText("You wake on a desolated rocky mountain, and find a piece of paper in your hand. You read it and it says, Reach the top and a reward awaits you.");
 
@@ -111,7 +110,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("While you hike up the colossal mountain you encounter a mountain lion. What do you do?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.hike);
 
         setAllBtnsVisible();
         btn1.setText("Fight");
@@ -138,7 +137,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("You're not that guy pal... the mountain lion mauls you.");
 
-        ivStory.setImageResource(R.drawable.im_laborday_swimming);
+        ivStory.setImageResource(R.drawable.im_runaway);
 
         setAllBtnsVisible();
         btn1.setText("Continue");
@@ -161,7 +160,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("You're not that guy pal... the mountain lion beats you to a pulp.");
 
-            ivStory.setImageResource(R.drawable.im_laborday_swimming);
+            ivStory.setImageResource(R.drawable.im_fight);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -177,9 +176,9 @@ public class GameLeangThong extends GameActivity {
         }
         else
         {
-            tvStoryText.setText("You found a rocket launcher on the ground and blow up the fierce beast.");
+            tvStoryText.setText("You found grenades on the ground and blow up the fierce beast.");
 
-            ivStory.setImageResource(R.drawable.im_laborday_swimming);
+            ivStory.setImageResource(R.drawable.im_grenades);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -202,7 +201,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("You survived the fight, but die to blood loss... womp womp");
 
-            ivStory.setImageResource(R.drawable.im_laborday_swimming);
+            ivStory.setImageResource(R.drawable.im_lose_to_lion);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -220,7 +219,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("You managed to take out the lion without even a scratch");
 
-            ivStory.setImageResource(R.drawable.im_laborday_swimming);
+            ivStory.setImageResource(R.drawable.im_defeatlion);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -240,7 +239,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("Congratulations Adventurer!!! Oh wait there's an alter with a purple drink on it. Do you drink it?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_arrive_at_beach);
+        ivStory.setImageResource(R.drawable.im_purple_drink_mountain);
 
         setAllBtnsVisible();
         btn1.setText("Drink the mysterious lean");
@@ -252,6 +251,7 @@ public class GameLeangThong extends GameActivity {
             public void onClick(View v) {
 
                 tvStoryText.setText("You drink the lean, and black out once again. You wake back up at the party, and the senior offers you the pills again. Which will you take?");
+                ivStory.setImageResource(R.drawable.im_purple_drink_mountain);
 
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -268,6 +268,7 @@ public class GameLeangThong extends GameActivity {
             public void onClick(View v) {
 
                 tvStoryText.setText("Guess what... you died to oxygen deprivation (hahahhahahahahahahahhaahahahah)");
+                ivStory.setImageResource(R.drawable.im_person_drinking_potion_mountain);
 
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -584,23 +585,48 @@ public class GameLeangThong extends GameActivity {
 
     public void noPotion()
     {
-        System.out.println("Well you decided not take it. Afterwards, the villagers greeted you as one of their own and you live the rest of your meaningless life as one of them. Shortly after you died to some waterborne disease.");
         defeat();
+
+        tvStoryText.setText("Well you decided not take it. Afterwards, the villagers greeted you as one of their own and you live the rest of your meaningless life as one of them. Shortly after you died to some waterborne disease.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { defeat(); }
+        });
     }
 
     public void coast()
     {
-        System.out.println("While you walk along the coast, you spot something in the distance and run towards it, only to find a skinwalker eating a sea lion. As you try backing up the stench of your musty clothes gains the attention of the skinwalker and it starts chasing after you. What now?");
-        System.out.println("1. Run for dear life \n2. Take your chances with the ocean");
 
-        if (choice == 1)
-        {
-            keepOnRunning();
-        }
-        else if (choice == 2)
-        {
-            water();
-        }
+        tvStoryText.setText("While you walk along the coast, you spot something in the distance and run towards it, only to find a skinwalker eating a sea lion. As you try backing up the stench of your musty clothes gains the attention of the skinwalker and it starts chasing after you. What now?");
+
+        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Run for dear life");
+        btn2.setText("Take your chances with the ocean");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                keepOnRunning();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                water();
+            }
+        });
     }
 
     public void keepOnRunning()
@@ -608,143 +634,323 @@ public class GameLeangThong extends GameActivity {
         double speed = Math.random();
         if (speed <= .5)
         {
-            System.out.println("\nShouldn't have been a couch potato... the skinwalker catches you and chomps off your head. Then it procceeds to emote on you.");
-            defeat();
+            tvStoryText.setText("Shouldn't have been a couch potato... the skinwalker catches you and chomps off your head. Then it proceeds to emote on you.");
+
+            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) { defeat(); }
+            });
         }
         else
         {
-            System.out.println("\nYou somehow managed to outrun the skinwalker... joining the track team was a good decision on your part.");
-            boat();
+            tvStoryText.setText("You somehow managed to outrun the skinwalker... joining the track team was a good decision on your part.");
+
+            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) { defeat(); }
+            });
         }
     }
     public void boat()
     {
-        System.out.println("\nAfter running for hours on end you find a boat house. You decide to finally rest after the day you had until you suddenly smell the scent of gas... kabooooommm**** (don't go in other people's houses.)");
-        defeat();
+        tvStoryText.setText("After running for hours on end you find a boat house. You decide to finally rest after the day you had until you suddenly smell the scent of gas... kabooooommm**** (don't go in other people's houses.)");
+
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { defeat(); }
+        });
     }
     public void water()
     {
-        System.out.println("\nYou really thought that would work?... the skinwalker jumps on top of you and drowns you. Then it teabags on your corpse.");
-        defeat();
+        tvStoryText.setText("You really thought that would work?... the skinwalker jumps on top of you and drowns you. Then it teabags on your corpse.");
+
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { defeat(); }
+        });
     }
 
     //________Black Pill________
     public void war()
     {
-        System.out.println("You wake up in a trench, you are in the middle of battle during a blitzkrieg. You also have no weapons on you except for your French uniform. You hear nazi soldiers closing in on you. You gotta make a move now, what will you do?");
-        System.out.println("1. Play dead (Too Scawwyy >_<) \n2. Fight the war (BE A MAN) ");
+        tvStoryText.setText("You wake up in a trench, you are in the middle of battle during a blitzkrieg. You also have no weapons on you except for your French uniform. You hear nazi soldiers closing in on you. You gotta make a move now, what will you do?");
 
-        if (choice == 1)
-        {
-            playDead();
-        }
-        else if (choice == 2)
-        {
-            warFight();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+
+        setAllBtnsVisible();
+        btn1.setText("Play dead (Too Scawwyy >_<)");
+        btn2.setText("Fight the war (BE A MAN)");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playDead();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                warFight();
+            }
+        });
     }
 
     public void warFight()
     {
-        System.out.println("Good job soldier, you made the right choice. Now what is your first line of action?");
-        System.out.println("1. Loot a gun from a body (They aint gonna need it anymore) \n2. Hide in a bunker (chat is this guy serious rn) ");
+        tvStoryText.setText("Good job soldier, you made the right choice. Now what is your first line of action?");
 
-        if (choice == 1)
-        {
-            loot();
-        }
-        else if (choice == 2)
-        {
-            coward();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+
+        setAllBtnsVisible();
+        btn1.setText("Loot a gun from a body (They aint gonna need it anymore)");
+        btn2.setText("Hide in a bunker (chat is this guy serious rn)");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loot();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                coward();
+            }
+        });
     }
 
     public void loot()
     {
-        System.out.println("You let go of your morals and start looting some bodies. !!!!YOU FOUND A LUGER!!!! with one bullet in it only. What's the strategy now?");
-        System.out.println("1. Camp (superior tactic) \n2. Get on the offensive");
+        tvStoryText.setText("You let go of your morals and start looting some bodies. !!!!YOU FOUND A LUGER!!!! with one bullet in it only. What's the strategy now?");
 
-        if (choice == 1)
-        {
-            camp();
-        }
-        else if (choice == 2)
-        {
-            shoot();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+
+        setAllBtnsVisible();
+        btn1.setText("Camp (superior tactic)");
+        btn2.setText("Get on the offensive");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                camp();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shoot();
+            }
+        });
     }
 
     public void shoot()
     {
-        System.out.println("Now that you have yourself a weapon (1 bullet *_*) how are you going to go about winning the war?");
-        System.out.println("1. Be strategic and plan first (nerd 0_0) \n2. Go out GUNS BLAZING!!! (One bullet one kill)");
+        tvStoryText.setText("Now that you have yourself a weapon (1 bullet *_*) how are you going to go about winning the war?");
 
-        if (choice == 1)
-        {
-            sniped();
-        }
-        else if (choice == 2)
-        {
-            tank();
-        }
+        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+
+        setAllBtnsVisible();
+        btn1.setText("Be strategic and plan first (nerd 0_0)");
+        btn2.setText("Go out GUNS BLAZING!!! (One bullet one kill)");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sniped();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tank();
+            }
+        });
     }
 
     public void sniped()
     {
-        System.out.println("\nYou decided on making a plan, so to start you should get a view of your surroundings. You peak your head outside the trench... you're dead you just got headshotted by a sniper 10 miles away (skill issue).");
-        defeat();
+        tvStoryText.setText("You decided on making a plan, so to start you should get a view of your surroundings. You peak your head outside the trench... you're dead you just got head-shotted by a sniper 10 miles away (skill issue).");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     public void tank()
     {
-        System.out.println("\nYou don't need a plan you're the main character, so with that you jump out of the trenches and start running across the battlefield, dodging stray bullets with the power of plot armor, and you come across a empty tank. You pilot it and go on a rampage deleting the enemy and your allies. After five filler episodes you finally finish the battle and come out on top.");
-        victory();
+        tvStoryText.setText("You don't need a plan you're the main character, so with that you jump out of the trenches and start running across the battlefield, dodging stray bullets with the power of plot armor, and you come across a empty tank. You pilot it and go on a rampage deleting the enemy and your allies. After five filler episodes you finally finish the battle and come out on top.");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                victory();
+            }
+        });
     }
 
     public void victory()
     {
-        System.out.println("As you celebrate your victory against the Nazis, a portal suddently opens below you sending you into a void of complete darkness, you shortly black out after loss of oxygen.");
-        System.out.println("You wake back up at the party, and the senior offers you the pills again. Which will you take?");
-        start();
+        tvStoryText.setText("As you celebrate your victory against the Nazis, a portal suddenly opens below you sending you into a void of complete darkness, you shortly black out after loss of oxygen. You wake back up at the party, and the senior offers you the pills again. Which will you take?");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                start();
+            }
+        });
     }
 
     public void camp()
     {
-        System.out.println("You wait silently and patiently for a target to come by. As nazis pass by you take them out one by one then loot them and repeat. And after 4 hours of this process you manage to wipe out the whole enemy squadron leading your nation to victory. (Fortnite Zero Build) ");
-        victory();
+        tvStoryText.setText("You wait silently and patiently for a target to come by. As nazis pass by you take them out one by one then loot them and repeat. And after 4 hours of this process you manage to wipe out the whole enemy squadron leading your nation to victory. (Fortnite Zero Build) ");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                victory();
+            }
+        });
     }
 
     public void coward()
     {
-        System.out.println("You decide to hide in a bunker till the blitzkriegs ends. (Well I take back what I said you darn sissy)");
+        tvStoryText.setText("You decide to hide in a bunker till the blitzkriegs ends. (Well I take back what I said you darn sissy)");
         double chance = Math.random();
 
-        if (chance <= .5)
-        {
-            gas();
-        }
-        else
-        {
-            allies();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (chance <= .5) {
+                    gas();
+                } else {
+                    allies();
+                }
+            }
+        });
+
+
     }
 
     public void gas()
     {
-        System.out.println("Well... that was a bad idea the Nazis leak some gas bombs inside and you suffocate. (L way to die) ");
-        defeat();
+        tvStoryText.setText("Well... that was a bad idea the Nazis leak some gas bombs inside and you suffocate. (L way to die) ");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     public void allies()
     {
-        System.out.println("Whats that... you hear the shooting from outside come to abrupt stop, as you peak your head outside you see that the nazis have left and your allies won. You get to live another day.");
-        sike();
+        tvStoryText.setText("Whats that... you hear the shooting from outside come to abrupt stop, as you peak your head outside you see that the nazis have left and your allies won. You get to live another day.");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sike();
+            }
+        });
     }
 
     public void sike()
     {
-        System.out.println("SIKKKEEEE. You got 360 no scoped by a sniper camping on a hill 5 miles away. X_x skill issue");
-        defeat();
+        tvStoryText.setText("SIKKKEEEE. You got 360 no scoped by a sniper camping on a hill 5 miles away. X_x skill issue");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     public void playDead()
@@ -752,56 +958,124 @@ public class GameLeangThong extends GameActivity {
         double chance = Math.random();
         if (chance >= .5)
         {
-            System.out.println("\nYou really thought that would work... the Nazis jump you and beat the living out of you, then they took you to one of their concentration camps");
-            captured();
+            tvStoryText.setText("You really thought that would work... the Nazis jump you and beat the living out of you, then they took you to one of their concentration camps");
+            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    captured();
+                }
+            });
         }
         else
         {
-            System.out.println("\nDue to your immense stealth skills, you managed to appear completely invisible to the soldiers, as they leave you alone, you see an opening to run to the treelines and desert the battle. As you run for dear life you hear your fellow comrades call you a dirty coward.");
-            deserter();
+            tvStoryText.setText("Due to your immense stealth skills, you managed to appear completely invisible to the soldiers, as they leave you alone, you see an opening to run to the tree-lines and desert the battle. As you run for dear life you hear your fellow comrades call you a dirty coward.");
+            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    deserter();
+                }
+            });
         }
     }
 
     public void deserter()
     {
-        System.out.println("You suddenly feel a hit of guilt as your about to desert the battle. Will you go back in the warzone?");
-        System.out.println("1. Go back to the war \n2. Nah looking out for #1 only");
+        tvStoryText.setText("You suddenly feel a hit of guilt as your about to desert the battle. Will you go back in the warzone?");
+        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
 
-        if (choice == 1)
-        {
-            warFight();
-        }
-        else if (choice == 2)
-        {
-            woods();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Go back to the war");
+        btn2.setText("Nah looking out for #1 only");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                warFight();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                woods();
+            }
+        });
     }
 
     public void woods()
     {
-        System.out.println("\nAs you flee into the forest you reach an abandoned house, and decide to rest on a bed for a sec. Then you started hearing some beeping under it ... kabboooooooommmmm X_X (the house was rigged with explosives >_<) ");
-        defeat();
+        tvStoryText.setText("As you flee into the forest you reach an abandoned house, and decide to rest on a bed for a sec. Then you started hearing some beeping under it ... kabboooooooommmmm X_X (the house was rigged with explosives >_<) ");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     public void captured()
     {
-        System.out.println("Well now you're a war prisoner of the Nazis. They put you in a cell room with an interrogator. They offer you a chance of freedom, if you rat out your comrades. What will you do?");
-        System.out.println("1. Rat out your team \n2. Don't snitch on them ");
+        tvStoryText.setText("Well now you're a war prisoner of the Nazis. They put you in a cell room with an interrogator. They offer you a chance of freedom, if you rat out your comrades. What will you do?");
+        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
 
-        if (choice == 1)
-        {
-            snitch();
-        }
-        else if (choice == 2)
-        {
-            dontSnitch();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Rat out your team");
+        btn2.setText("Don't snitch on them");
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                snitch();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dontSnitch();
+            }
+        });
     }
 
     public void dontSnitch()
     {
-        System.out.println("\nGood on you for staying loyal and not betraying your nation... however the Nazis didn't take it so well and they sent you to solitude confinement.");
-        prisoner();
+        tvStoryText.setText("Good on you for staying loyal and not betraying your nation... however the Nazis didn't take it so well and they sent you to solitude confinement.");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                prisoner();
+            }
+        });
     }
 
     public void snitch()
@@ -809,26 +1083,74 @@ public class GameLeangThong extends GameActivity {
         double speed = Math.random();
         if (speed <= .5)
         {
-            System.out.println("\nYou immediately rat out your whole nation without hesitation.");
-            traitor();
+            tvStoryText.setText("You immediately rat out your whole nation without hesitation.");
+            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    traitor();
+                }
+            });
         }
         else
         {
-            System.out.println("\nWell you betrayed the nation, and even more you were gullible in thinking the nazis will set you free. The nazis drag you into soilitude confinement.");
-            prisoner();
+            tvStoryText.setText("Well you betrayed the nation, and even more you were gullible in thinking the nazis will set you free. The nazis drag you into soilitude confinement.");
+            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    prisoner();
+                }
+            });
         }
     }
 
     public void prisoner()
     {
-        System.out.println("\nWell well well, aren't you in a tough pickle now. Trapped in a prison cell waiting to starve to death. (you suck as this game)");
-        defeat();
+        tvStoryText.setText("Well well well, aren't you in a tough pickle now. Trapped in a prison cell waiting to starve to death. (you suck as this game)");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     public void traitor()
     {
-        System.out.println("\nWell not only did you betray your whole nation, but with your charismatic skills you convinced the Nazis to let you live by switching teams. *_*). However the bomb implanted into your French suit exploded immediately after detecting your act of betrayal.");
-        defeat();
+        tvStoryText.setText("Well not only did you betray your whole nation, but with your charismatic skills you convinced the Nazis to let you live by switching teams. *_*). However the bomb implanted into your French suit exploded immediately after detecting your act of treason.");
+        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                defeat();
+            }
+        });
     }
 
     public void defeat()
