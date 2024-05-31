@@ -30,6 +30,7 @@ public class GameBinghamDaniel extends GameActivity {
         btn3 = findViewById(R.id.btn_3);
         btn4 = findViewById(R.id.btn_4);
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_plane);
         tvTitle.setText("Summer Vacation in Japan");
         tvSubtitle.setText("Dumb Version");
 
@@ -47,14 +48,26 @@ public class GameBinghamDaniel extends GameActivity {
         start();
     }
 
+    private void setAllBtnsVisible() {
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.VISIBLE);
+    }
+
     @SuppressLint("SetTextI18n")
     private void start()
     {
+        isWon = false;
+
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_map);
         tvStoryText.setText("Time to visit Japan, where do you want to go visit?");
+
+        setAllBtnsVisible();
         btn1.setText("Visit Tokyo");
         btn2.setText("Visit Osaka");
         btn3.setText("Visit Kyoto");
-        btn4.setText("N/A");
+        btn4.setVisibility(View.INVISIBLE);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,11 +94,14 @@ public class GameBinghamDaniel extends GameActivity {
     private void goToTokyo()
     {
         tvTitle.setText("Tokyo (東京) Path");
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_akiba);
         tvStoryText.setText("What do you want to do while you are in Tokyo?");
+
+        setAllBtnsVisible();
         btn1.setText("Head to Akihabara");
         btn2.setText("Go to Tokyo Disneyland");
         btn3.setText("Head to Senso-Ji");
-        btn4.setText("N/A");
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,11 +128,14 @@ public class GameBinghamDaniel extends GameActivity {
     private void akihabara()
     {
         tvSubtitle.setText("Akihabara Branch");
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_akiba2);
         tvStoryText.setText("What do you do in Akihabara?");
+
+        setAllBtnsVisible();
         btn1.setText("Go to a cat cafe");
         btn2.setText("Go to a maid cafe");
         btn3.setText("Embrace your inner otaku/weeb");
-        btn4.setText("N/A");
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,6 +166,7 @@ public class GameBinghamDaniel extends GameActivity {
 
     private void maidCafe()
     {
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_maidcafe);
         tvStoryText.setText("You feel like you've committed a great sin, but you did have fun. メイドさんは可愛いすぎて、罪が重ねたかもしれないよ");
         defeat();
     }
@@ -154,10 +174,12 @@ public class GameBinghamDaniel extends GameActivity {
     private void beGaijin()
     {
         tvStoryText.setText("You embrace your inner otaku/weeb but then...");
+
+        setAllBtnsVisible();
         btn1.setText("Another tourist calls you out for cultural appropriation");
         btn2.setText("You decide to buy some manga");
-        btn3.setText("N/A");
-        btn4.setText("N/A");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,8 +212,12 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvSubtitle.setText("Disneyland Branch");
         tvStoryText.setText("What are you going to do at Disneyland Tokyo?");
+
+        setAllBtnsVisible();
         btn1.setText("Commit a Johnny Somali");
         btn2.setText(" Be a normal tourist (or whatever)");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -211,8 +237,12 @@ public class GameBinghamDaniel extends GameActivity {
     private void actLikeSomali()
     {
         tvStoryText.setText("You have two options, time to choose your fate:");
+
+        setAllBtnsVisible();
         btn1.setText("Knocked out and arrested?");
         btn2.setText("You escape but...");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -251,8 +281,12 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvSubtitle.setText("Senso-Ji Branch");
         tvStoryText.setText("You head over to the extremely famous Senso-Ji temple in Tokyo and...");
+
+        setAllBtnsVisible();
         btn1.setText("You are overwhelmed by the crowd");
         btn2.setText("You eat some food and take pictures");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -285,6 +319,8 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvTitle.setText("Osaka (大阪) Path");
         tvStoryText.setText("Alright, what do you want to do in Osaka?");
+
+        setAllBtnsVisible();
         btn1.setText("Go to Dotonbori District");
         btn2.setText("Go to Shinsaibashi-suji Shopping Street");
         btn3.setText("Go to Universal Studios Japan");
@@ -322,13 +358,12 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvSubtitle.setText("Dotonbori District Branch");
         tvStoryText.setText("Ok, what do you want to do in Dotonbori?");
-        String text = "Ok, what do you want to do in Dotonbori?\n" +
-                      "1. Walk around\n" +
-                      "2. Eat some good food and buy some stuff\n";
+
+        setAllBtnsVisible();
         btn1.setText("Walk around");
         btn2.setText("Eat some good food and buy some stuff");
-        btn3.setText("N/A");
-        btn4.setText("N/A");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -352,8 +387,12 @@ public class GameBinghamDaniel extends GameActivity {
     private void streetInterview()
     {
         tvStoryText.setText("You encounter a wild street interviewer, what do you do?");
+
+        setAllBtnsVisible();
         btn1.setText("Use your never before seen skills in the Japanese language");
         btn2.setText("Ignore them and live another day");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -377,8 +416,12 @@ public class GameBinghamDaniel extends GameActivity {
     private void timeSkip()
     {
         tvStoryText.setText("The interviewer is seriously interested and impressed, unfortunately you are basically stuck answering a million questions. You feel you must escape, what do you do? 4 hours later...");
+
+        setAllBtnsVisible();
         btn1.setText("You use rasengan on the interviewer to escape");
         btn2.setText("You slap them like Will Smith to escape");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -415,8 +458,12 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvSubtitle.setText("Shinsaibashi Branch");
         tvStoryText.setText("よし, what do you do in Shinsaibashi-suji?");
+
+        setAllBtnsVisible();
         btn1.setText("Walk around");
         btn2.setText("Eat some good food and buy lots of stuff");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -448,8 +495,12 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvSubtitle.setText("Universal Studios Japan Branch");
         tvStoryText.setText("到着しました, now that you're here, what do you do?");
+
+        setAllBtnsVisible();
         btn1.setText("Buy a bunch of souvenirs and merch");
         btn2.setText("Ride the rides and check out the attractions");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -468,8 +519,12 @@ public class GameBinghamDaniel extends GameActivity {
     private void obsessedFan()
     {
         tvStoryText.setText("OK, you basically buy every plushie and thing you can see because why the heck not, then you realize...");
+
+        setAllBtnsVisible();
         btn1.setText("How much money you just spent.");
         btn2.setText("That money is not important, happiness is.");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -507,8 +562,12 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvSubtitle.setText("Osaka Castle Branch");
         tvStoryText.setText("Oh brave soul, what do you do at Osaka Castle?");
+
+        setAllBtnsVisible();
         btn1.setText("Take pictures, leaving as quickly as possible");
         btn2.setText("That money is not important, happiness is.");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -541,9 +600,12 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvTitle.setText("Kyoto (京都) Path");
         tvStoryText.setText("Now that you're in Kyoto, what are you going to do?");
+
+        setAllBtnsVisible();
         btn1.setText("Go to Gion District");
         btn2.setText("Go to Fushimi Inari-taisha Shrine");
         btn3.setText("Go to Kyoumizu-dera Temple");
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -570,10 +632,12 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvSubtitle.setText("Gion Branch");
         tvStoryText.setText("You know the drift, now what are you gonna do?");
+
+        setAllBtnsVisible();
         btn1.setText("Find a geisha");
         btn2.setText("Walk around and admire the views");
-        btn3.setText("N/A");
-        btn4.setText("N/A");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -592,8 +656,12 @@ public class GameBinghamDaniel extends GameActivity {
     private void geisha()
     {
         tvStoryText.setText("Ok, so you found a geisha, what are you going to do?");
+
+        setAllBtnsVisible();
         btn1.setText("Take a billion pictures");
         btn2.setText("Walk right past");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
 
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -623,115 +691,139 @@ public class GameBinghamDaniel extends GameActivity {
 
     private void stunned()
     {
-        tvStoryText.setText("\"Wow\" is the only thing on your mind, so much so that you feel...")
-        String text = "\"Wow\" is the only thing on your mind, so much so that you feel...\n" +
-                      "1. You're about to awaken something previously inert inside you\n" +
-                      "2. Japan is so much better than your home country\n";
-        System.out.println(text);
-        int choice =
+        tvStoryText.setText("\"Wow\" is the only thing on your mind, so much so that you feel...");
 
-        if (choice == 1)
-        {
-            awakening();
-        }
-        else if (choice == 2);
-        {
-            ahMan();
-        }
+        setAllBtnsVisible();
+        btn1.setText("You're about to awaken something previously inert inside you");
+        btn2.setText("Japan is so much better than your home country");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                awakening();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ahMan();
+            }
+        });
     }
 
     private void awakening()
     {
-        String text = "You undergo an epic transformation, what do you awaken?\n" +
-                      "1. Filthy Frank\n" +
-                      "2. Master Oogway\n";
-        System.out.println(text);
-        int choice =
+        tvStoryText.setText("You undergo an epic transformation, what do you awaken?");
 
-        if (choice == 1)
-        {
-            filthyWho();
-        }
-        else if (choice == 2)
-        {
-            believe();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Filthy Frank");
+        btn2.setText("Master Oogway");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                filthyWho();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                believe();
+            }
+        });
     }
 
     private void filthyWho()
     {
-        System.out.println("You unintentionally wreak havoc as you turn into Filthy Frank. Is this a good or bad thing? I don't even know at this point.");
+        tvStoryText.setText("You unintentionally wreak havoc as you turn into Filthy Frank. Is this a good or bad thing? I don't even know at this point.");
         goToKyoto();
     }
     private void believe()
     {
-        System.out.println("Taking inspiration from Master Oogway, you find a suitable place to transcend this plane of existence and turn into flower blossoms. Goodbye world, goodbye cruel world. Wait, that doesn't sound quite right");
+        tvStoryText.setText("Taking inspiration from Master Oogway, you find a suitable place to transcend this plane of existence and turn into flower blossoms. Goodbye world, goodbye cruel world. Wait, that doesn't sound quite right");
         defeat();
     }
 
     private void ahMan()
     {
-        System.out.println("You realize you would really like to live in Japan because it is so nice. Is this where the poor college student saga ends? No, this is only the beginning, you can't fall here.");
+        tvStoryText.setText("You realize you would really like to live in Japan because it is so nice. Is this where the poor college student saga ends? No, this is only the beginning, you can't fall here.");
         start();
     }
 
     //Fushimi Inari-taisha Shrine Branch
     private void omgShrine()
     {
-        String text = "Wow, what a nice shrine, what are you going to do here though?\n" +
-                      "1. Walk around and take pictures\n" +
-                      "2. Use rasengan on unsuspecting passersby\n";
-        System.out.println(text);
-        int choice =
+        tvStoryText.setText("Wow, what a nice shrine, what are you going to do here though?");
 
-        if (choice == 1)
-        {
-            classicTourist();
-        }
-        else if (choice == 2);
-        {
-            rasengan();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Walk around and take pictures");
+        btn2.setText("Use rasengan on unsuspecting passersby");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                classicTourist();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rasengan();
+            }
+        });
     }
 
     private void classicTourist()
     {
-        System.out.println("Nothing quite like just being a regular ol' tourist and walking through and experiencing beautiful places. That's a win in my book, onto the next adventure...");
+        tvStoryText.setText("Nothing quite like just being a regular ol' tourist and walking through and experiencing beautiful places. That's a win in my book, onto the next adventure...");
         start();
     }
     private void rasengan()
     {
-        System.out.println("You've had enough of this bulls**t and you use 螺旋丸 on unsuspecting people nearby. Not a good idea since other rasengan users are also present. They all proceed to unleash their rasengan at the same time at you. Utterly defeated, you pack up and head home.");
+        tvStoryText.setText("You've had enough of this bulls**t and you use 螺旋丸 on unsuspecting people nearby. Not a good idea since other rasengan users are also present. They all proceed to unleash their rasengan at the same time at you. Utterly defeated, you pack up and head home.");
         defeat();
     }
 
     //Kiyomizu-dera Temple Branch
     private void anotherTemple()
     {
-        String text = "Now that you're at this fine temple on a hill, what do you do?\n" +
-                      "1. Evolve into a Pokemon (don't question it)\n" +
-                      "2. Take pictures and then glide down\n";
-        System.out.println(text);
-        int choice =
+        tvSubtitle.setText("Kiyomizu-dera Temple Branch");
+        tvStoryText.setText("Now that you're at this fine temple on a hill, what do you do?");
 
-        if (choice == 1)
-        {
-            evolution();
-        }
-        else if (choice == 2)
-        {
-            showOff();
-        }
+        setAllBtnsVisible();
+        btn1.setText("Evolve into a Pokemon (don't question it)");
+        btn2.setText("Take pictures and then glide down");
+        btn3.setVisibility(View.INVISIBLE);
+        btn4.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                evolution();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showOff();
+            }
+        });
     }
 
     private void evolution()
     {
-        System.out.println("At this point, you just decide to evolve into a Pokemon, who knows which one but you've seen enough to know which one. You no longer have the ability to speak but hey, you can shoot fireballs and stuff. やばい、これは終わりかもしれないですね");
+        tvStoryText.setText("At this point, you just decide to evolve into a Pokemon, who knows which one but you've seen enough to know which one. You no longer have the ability to speak but hey, you can shoot fireballs and stuff. やばい、これは終わりかもしれないですね");
         defeat();
     }
     private void showOff()
     {
-        System.out.println("So you take some pictures and then pull out this crazy wind glider and fly down and away from everyone and everything. You should have seen the looks on people's faces, it was hysterical. What a show-off, eh? I guess it's off to the next destination now.");
+        tvStoryText.setText("So you take some pictures and then pull out this crazy wind glider and fly down and away from everyone and everything. You should have seen the looks on people's faces, it was hysterical. What a show-off, eh? I guess it's off to the next destination now.");
         start();
     }
 
@@ -745,7 +837,7 @@ public class GameBinghamDaniel extends GameActivity {
         numLives--;
 
         //clear console, display text, etc
-        System.out.println("Looks like you lost big time, 大間違いですね, try to be more careful.");
+        tvStoryText.setText("Looks like you lost big time, 大間違いですね, try to be more careful.");
 
         //determine if player gets to play again
         if (numLives > 0)
