@@ -42,6 +42,8 @@ public class GameCashawCharles extends GameActivity {
         tvSitUpVal = findViewById(R.id.tv_situp_value);
         tvSquatVal = findViewById(R.id.tv_squat_value);
 
+        ivMain.setImageResource(R.drawable.im_cashaw_charles_starting);
+
         createGymhead();
         runWorkout();
     }
@@ -80,6 +82,7 @@ public class GameCashawCharles extends GameActivity {
         }
         else
         {
+            ivMain.setImageResource(R.drawable.im_cashaw_charles_complete);
             endOfWorkout();
         }
 
@@ -95,13 +98,6 @@ public class GameCashawCharles extends GameActivity {
         tvPullUpVal.setText(""+gymhead.getPullUps());
         tvPushUpVal.setText(""+gymhead.getPushUps());
         tvSitUpVal.setText(""+gymhead.getSitUps());
-        String text =
-                gymhead.getName() +
-                        "\nPull ups done:\t\t" + gymhead.getPullUps() +
-                        "\nPush ups done:\t\t" + gymhead.getPushUps() +
-                        "\nSquats done:\t\t" + gymhead.getSquats() +
-                        "\nSit ups done:\t\t" + gymhead.getSitUps();
-        System.out.println(text);
     }
 
     /**
@@ -118,6 +114,7 @@ public class GameCashawCharles extends GameActivity {
             @Override
             public void onClick(View view) {
                 gymhead.doPullUp();
+                ivMain.setImageResource(R.drawable.im_cashaw_charles_pushup);
                 runWorkout();
             }
         });
@@ -126,7 +123,9 @@ public class GameCashawCharles extends GameActivity {
             @Override
             public void onClick(View view) {
                 gymhead.doPushUp();
+                ivMain.setImageResource(R.drawable.im_cashaw_charles_pullup);
                 runWorkout();
+
 
             }
         });
@@ -135,8 +134,8 @@ public class GameCashawCharles extends GameActivity {
             @Override
             public void onClick(View view) {
                 gymhead.doSquats();
+                ivMain.setImageResource(R.drawable.im_cashaw_charles_situp);
                 runWorkout();
-
             }
         });
 
@@ -144,6 +143,7 @@ public class GameCashawCharles extends GameActivity {
             @Override
             public void onClick(View view) {
                 gymhead.doSitUps();
+                ivMain.setImageResource(R.drawable.im_cashaw_charles_squat);
                 runWorkout();
 
             }
@@ -157,26 +157,31 @@ public class GameCashawCharles extends GameActivity {
      */
     private void endOfWorkout()
     {
+        ivMain.setImageResource(R.drawable.im_cashaw_charles_workout_again);
 
         btnPushUp.setVisibility(View.INVISIBLE);
         btnPullUp.setVisibility(View.INVISIBLE);
         btnSitUp.setVisibility(View.INVISIBLE);
+        btnSquat.setText("Workout Again?");
+
 
         if (gymhead.getWorkoutDone() >= gymhead.getMaxWorkout())
         {
             System.out.println("Workout done!");
+            ivMain.setImageResource(R.drawable.im_cashaw_charles_workout_again);
         }
 
-        System.out.println("Congratulations, you did " + gymhead.getPullUps() + " pull ups " + gymhead.getPushUps() + " push ups " + gymhead.getSquats() + " squats and " + gymhead.getSitUps() + " sit ups ");
+        tvMain.setText("Congratulations, you did " + gymhead.getPullUps() + " push ups " + gymhead.getPushUps() + " pull ups " + gymhead.getSquats() + " sit-ups and " + gymhead.getSitUps() + " squats ");
 
-        System.out.println("Workout again?\n1. YES\n2. NO!");
 
         btnSquat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 gymhead = new CashawGymhead(gymhead.getName());
-                runWorkout();
+                tvMain.setText("Choose your workout");
 
+                ivMain.setImageResource(R.drawable.im_cashaw_charles_complete);
+                runWorkout();
             }
         });
     }
