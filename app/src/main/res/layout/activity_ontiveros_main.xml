@@ -24,14 +24,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="667dp" />
+        app:layout_constraintGuide_percent="0.08891929" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="678dp" />
+        app:layout_constraintGuide_percent="0.95" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline32"
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="514dp" />
+        app:layout_constraintGuide_percent="0.7045144" />
 
     <TextView
         android:id="@+id/textView"
@@ -66,8 +66,8 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/guideline30"
-        app:srcCompat="@drawable/unnamed"
-        tools:srcCompat="@drawable/unnamed" />
+        app:srcCompat="@drawable/im_ontiverosmichael_bed"
+        tools:srcCompat="@drawable/im_ontiverosmichael_bed" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline34"

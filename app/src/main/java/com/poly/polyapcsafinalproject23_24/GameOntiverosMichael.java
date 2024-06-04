@@ -26,6 +26,7 @@ public class GameOntiverosMichael extends GameActivity {
      */
     public void run()
     {
+        setContentView(R.layout.activity_ontiveros_main);
         tvHealthVal = findViewById(R.id.tv_health_val);
         tvSleepVal = findViewById(R.id.tv_time_val);
         tvText = findViewById(R.id.tv_main);
@@ -34,6 +35,9 @@ public class GameOntiverosMichael extends GameActivity {
         btnStayUp = findViewById(R.id.btn_stay_up);
 
         player = new OntiverosWokePerson("Person",100,0);
+
+        btnSleep.setText("Go to sleep");
+        btnStayUp.setText("Stay up");
 
         runSleeper();
     }
@@ -47,6 +51,14 @@ public class GameOntiverosMichael extends GameActivity {
      */
     private void runSleeper()
     {
+        if (player.getHealth() >= 50 && player.getHealth() <= 60)
+        {
+            ivPicture.setImageResource(R.drawable.im_ontiverosmichael_paranoid);
+        }
+        else if (player.getHealth() > 0 && player.getHealth() <= 30)
+        {
+            ivPicture.setImageResource(R.drawable.im_ontiverosmichael_lostit);
+        }
         if (player.getInsanity() < 100 && player.getHealth() > 0)
         {
             displayStats();
@@ -97,12 +109,12 @@ public class GameOntiverosMichael extends GameActivity {
      */
     private void endOfSleeper()
     {
-        if (player.getHealth() == 0)
+        if (player.getHealth() <= 0)
         {
             tvText.setText("Your health is down");
 
         }
-        if (player.getInsanity() == 100)
+        if (player.getInsanity() >= 100)
         {
             tvText.setText("Woah you slept " + player.getTimeHasSleep() + " those are rookie numbers\n\n" +
                     "Do you want to sleep?");
@@ -114,14 +126,14 @@ public class GameOntiverosMichael extends GameActivity {
                 @Override
                 public void onClick(View view) {
                     player = new OntiverosWokePerson(player.getName(),100, 0);
-                    runSleeper();
+                    run();
                 }
             });
 
             btnStayUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(GameOntiverosMichael.this, ChooseGameFragment.class));
+                    startActivity(new Intent(GameOntiverosMichael.this, MainActivity.class));
                 }
             });
 
