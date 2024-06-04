@@ -163,6 +163,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You have a great time and feel very wholesome petting cats. 猫も可愛いし漫画も読めます");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_catcafe);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -200,6 +201,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You embrace your inner otaku/weeb but then...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_weeb);
         setAllBtnsVisible();
         btn1.setText("Another tourist calls you out for cultural appropriation");
         btn2.setText("You decide to buy some manga");
@@ -224,6 +226,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You end up punching them in the face, accidentally (right?)");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_punch);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -242,6 +245,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You bought so many manga that you can't read, job well done. ただ僕は読めますから安心してね。いつか日本語上手になるはずだ");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_manga);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -262,6 +266,7 @@ public class GameBinghamDaniel extends GameActivity {
         tvSubtitle.setText("Disneyland Branch");
         tvStoryText.setText("What are you going to do at Disneyland Tokyo?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_disney);
         setAllBtnsVisible();
         btn1.setText("Commit a Johnny Somali");
         btn2.setText(" Be a normal tourist (or whatever)");
@@ -287,6 +292,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You have two options, time to choose your fate:");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_somali);
         setAllBtnsVisible();
         btn1.setText("Knocked out and arrested?");
         btn2.setText("You escape but...");
@@ -311,6 +317,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("As expected, an angry Japanese person knocks you out and you are later arrested for being a public disturbance. まだまだですね");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_somali2);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -329,6 +336,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("Although you are punched in the face, you manage to barely escape. Unfortunately for you, as you are escaping someone trips you and a whole gang of angry people beat you up anyways.");
 
+        ivStory.setImageResource(R.drawable.im_danielbingham_beatdown);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -347,6 +355,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You have the time of your life and feel you made a really good decision.");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_disneytourist);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -367,6 +376,7 @@ public class GameBinghamDaniel extends GameActivity {
         tvSubtitle.setText("Senso-Ji Branch");
         tvStoryText.setText("You head over to the extremely famous Senso-Ji temple in Tokyo and...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_sensoji);
         setAllBtnsVisible();
         btn1.setText("You are overwhelmed by the crowd");
         btn2.setText("You eat some food and take pictures");
@@ -391,6 +401,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("Overwhelmed by the sheer amount of people present there, you decide to head back to the hotel because you didn't sign up for this.");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_crowdedtemple);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -409,6 +420,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You head to the plethora of street vendors and stalls available near the temple and buy and eat some good food. You take a bunch of pictures and even make an offering at the temple, unfortunately there are way too many people. Either way, you feel like it was a pretty fruitful experience");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_streetfood);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -429,6 +441,7 @@ public class GameBinghamDaniel extends GameActivity {
         tvTitle.setText("Osaka (大阪) Path");
         tvStoryText.setText("Alright, what do you want to do in Osaka?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_osaka);
         setAllBtnsVisible();
         btn1.setText("Go to Dotonbori District");
         btn2.setText("Go to Shinsaibashi-suji Shopping Street");
@@ -468,6 +481,7 @@ public class GameBinghamDaniel extends GameActivity {
         tvSubtitle.setText("Dotonbori District Branch");
         tvStoryText.setText("Ok, what do you want to do in Dotonbori?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_dotonbori);
         setAllBtnsVisible();
         btn1.setText("Walk around");
         btn2.setText("Eat some good food and buy some stuff");
@@ -492,6 +506,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You walk around taking in the sights and thinking about life and your vacation so far. Before you can think too much though...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_dotonbori2);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -509,6 +524,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You encounter a wild street interviewer, what do you do?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_streetinterview);
         setAllBtnsVisible();
         btn1.setText("Use your never before seen skills in the Japanese language");
         btn2.setText("Ignore them and live another day");
@@ -533,6 +549,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You use your crazy Japanese to wow and please the interviewer");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_japanese);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -550,6 +567,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("The interviewer is seriously interested and impressed, unfortunately you are basically stuck answering a million questions. You feel you must escape, what do you do? 4 hours later...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_impatient);
         setAllBtnsVisible();
         btn1.setText("You use rasengan on the interviewer to escape");
         btn2.setText("You slap them like Will Smith to escape");
@@ -573,6 +591,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("Having had enough of the interviewer's endless ramblings you use 螺旋丸, it is effective and the interviewer retreats! I think we can consider this a victory, time to head back to the hotel...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_boilingpoint);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -590,6 +609,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You've had enough and you land a solid slap on the interviewer's face, Will Smith would be proud. The interviewer and their cameraman quickly retreat, job well done! Time to head back...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_slap);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -606,8 +626,9 @@ public class GameBinghamDaniel extends GameActivity {
 
     private void chad()
     {
-        tvStoryText.setText("You've seen enough interview videos on YouTube to know where this is going to go, you choose to fight another day. Very wise...");
+        tvStoryText.setText("You've seen enough interview videos on YouTube to know where this is going to go, you choose to fight another day. The street interviewer is pissed to say the least. Very wise...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_anotherday);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -628,6 +649,7 @@ public class GameBinghamDaniel extends GameActivity {
         tvSubtitle.setText("Shinsaibashi Branch");
         tvStoryText.setText("よし, what do you do in Shinsaibashi-suji?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_shinsaibashi);
         setAllBtnsVisible();
         btn1.setText("Walk around");
         btn2.setText("Eat some good food and buy lots of stuff");
@@ -652,6 +674,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You eat some good food and buy a few things along the way. Reality hits like a truck though...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_kaimono);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -669,6 +692,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You spent too much money even though the food and the stuff you bought was good. I guess this is just a bit of a skill issue problem.");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_broke);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -689,6 +713,7 @@ public class GameBinghamDaniel extends GameActivity {
         tvSubtitle.setText("Universal Studios Japan Branch");
         tvStoryText.setText("到着しました, now that you're here, what do you do?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_universal);
         setAllBtnsVisible();
         btn1.setText("Buy a bunch of souvenirs and merch");
         btn2.setText("Ride the rides and check out the attractions");
@@ -713,6 +738,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("OK, you basically buy every plushie and thing you can see because why the heck not, then you realize...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_merch);
         setAllBtnsVisible();
         btn1.setText("How much money you just spent.");
         btn2.setText("That money is not important, happiness is.");
@@ -737,6 +763,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You realize that you just exceeded your budget twofold on this trip, unfortunately that means you will be walking more from here on out.");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_broke2);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -754,6 +781,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You realize that money hardly matters when you're having fun so you decide to just go along with the flow. Broke as you may be, it's a simple as pressing restart");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_reset);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -772,6 +800,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("Waiting in lines for hours on end doesn't really make up for the rides, but they were fun so all's good, right? You put in more steps today than you have done in months back home, maybe you lost a few pounds too, wait...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_universal2);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -792,6 +821,7 @@ public class GameBinghamDaniel extends GameActivity {
         tvSubtitle.setText("Osaka Castle Branch");
         tvStoryText.setText("Oh brave soul, what do you do at Osaka Castle?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_osakacastle);
         setAllBtnsVisible();
         btn1.setText("Take pictures, leaving as quickly as possible");
         btn2.setText("That money is not important, happiness is.");
@@ -816,6 +846,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("As an introvert, you avoid spending too much time in this popular place with people everywhere. Who knows if an interviewer will show up out of nowhere or lest you see a popular YouTuber livestreaming");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_castleintrovert);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -834,6 +865,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You summon your inner courage 勇気 and truly enjoy the sights before you, even a Johnny Somali impersonator/copycat couldn't faze you. What a fulfilling day, now off to your next adventure...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_castle_extrovert);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -854,6 +886,7 @@ public class GameBinghamDaniel extends GameActivity {
         tvTitle.setText("Kyoto (京都) Path");
         tvStoryText.setText("Now that you're in Kyoto, what are you going to do?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_kyoto);
         setAllBtnsVisible();
         btn1.setText("Go to Gion District");
         btn2.setText("Go to Fushimi Inari-taisha Shrine");
@@ -886,6 +919,7 @@ public class GameBinghamDaniel extends GameActivity {
         tvSubtitle.setText("Gion Branch");
         tvStoryText.setText("You know the drift, now what are you gonna do?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_gion);
         setAllBtnsVisible();
         btn1.setText("Find a geisha");
         btn2.setText("Walk around and admire the views");
@@ -910,6 +944,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("Ok, so you found a geisha, what are you going to do?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_geisha);
         setAllBtnsVisible();
         btn1.setText("Take a billion pictures");
         btn2.setText("Walk right past");
@@ -935,6 +970,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You procede to take a bunch of pictures, unfortunately you didn't know that you need to get the person's consent first. People around you give you the stare and a nearby police officer notices you...oh crap.");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_nosy_tourist);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -952,6 +988,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("Ok, I've had enough with all this encapsulation; so many methods. I guess that's why you also just walked past the geisha after looking at them for a few seconds. Not that big of a deal I suppose, feels nice...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_cool_tourist);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -970,6 +1007,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("\"Wow\" is the only thing on your mind, so much so that you feel...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_amazed_tourist);
         setAllBtnsVisible();
         btn1.setText("You're about to awaken something previously inert inside you");
         btn2.setText("Japan is so much better than your home country");
@@ -994,6 +1032,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You undergo an epic transformation, what do you awaken?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_transformation);
         setAllBtnsVisible();
         btn1.setText("Filthy Frank");
         btn2.setText("Master Oogway");
@@ -1018,6 +1057,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You unintentionally wreak havoc as you turn into Filthy Frank. Is this a good or bad thing? I don't even know at this point.");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_filthy_frank);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -1035,6 +1075,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("Taking inspiration from Master Oogway, you find a suitable place to transcend this plane of existence and turn into flower blossoms. Goodbye world, goodbye cruel world. Wait, that doesn't sound quite right");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_ascending);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -1053,6 +1094,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("You realize you would really like to live in Japan because it is so nice. Is this where the poor college student saga ends? No, this is only the beginning, you can't fall here.");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_reset);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
@@ -1072,6 +1114,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("Wow, what a nice shrine, what are you going to do here though?");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_fushimi_shrine);
         setAllBtnsVisible();
         btn1.setText("Walk around and take pictures");
         btn2.setText("Use rasengan on unsuspecting passersby");
@@ -1096,6 +1139,7 @@ public class GameBinghamDaniel extends GameActivity {
     {
         tvStoryText.setText("Nothing quite like just being a regular ol' tourist and walking through and experiencing beautiful places. That's a win in my book, onto the next adventure...");
 
+        ivStory.setImageResource(R.drawable.im_binghamdaniel_reset_shrine);
         setAllBtnsVisible();
         btn1.setText("Next");
         btn2.setVisibility(View.INVISIBLE);
