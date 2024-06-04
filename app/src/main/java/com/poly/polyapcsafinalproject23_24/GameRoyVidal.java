@@ -116,6 +116,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void leaveRoom() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_inhotelroom);
 
         tvStoryText.setText("What would you rather do, go outside or stay inside the lobby ?");
 
@@ -141,6 +142,7 @@ public class GameRoyVidal extends GameActivity {
 
     private void inside() {
 
+        ivStory.setImageResource(R.drawable.im_vidalroy_insidelobby);
         tvStoryText.setText("What would you rather do inside the lobby ?");
 
         setAllBtnsVisible();
@@ -164,6 +166,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void outside() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_outsidelobby);
 
         tvStoryText.setText("What would you rather do outside ?");
 
@@ -188,6 +191,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void stayInRoom() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_stayinroom);
 
         tvStoryText.setText("What would you rather do, go outside or stay inside the lobby ?");
 
@@ -219,6 +223,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void talkGf() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_talkgf);
+
         isWon = false;
         tvStoryText.setText("You and your crazy Grilfriend get into an argument." +
                 " She shoots you because she is crazy. Game over.");
@@ -238,6 +244,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void eightBall() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_eightball);
+
         isWon = false;
         tvStoryText.setText("You beat everyone at 8ball, but start a bar fight for talking trash. " +
                 "You are thrown out");
@@ -257,6 +265,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void blackJack() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_blackjack);
+
         isWon = false;
         tvStoryText.setText("You get caught cheating in blackjack and are thrown out");
 
@@ -276,6 +286,8 @@ public class GameRoyVidal extends GameActivity {
 
 
     private void playBasketball() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_basketball);
+
         isWon = false;
         tvStoryText.setText("You play basketball and you get your ankles broken by lebron james" +
                 "You can't continue your vacation");
@@ -295,6 +307,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void playFootball() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_football);
+
         isWon = false;
         tvStoryText.setText("You play football and get hit-sticked by Raw Lewis. " +
                 "You have a concussion. Game over.");
@@ -314,6 +328,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void takeNap() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_nap);
+
         isWon = false;
         tvStoryText.setText("You took too much melatonin and you are in a coma now. Game over.");
 
@@ -332,6 +348,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void watchTv() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_watchtv);
+
         isWon = false;
         tvStoryText.setText("The burgers werent cooked correctly, you now " +
                 "have a stomach virus. Game over.");
@@ -353,7 +371,7 @@ public class GameRoyVidal extends GameActivity {
     //OPTION 2 ________________________________________________________
 
     private void goSwimming() {
-
+        ivStory.setImageResource(R.drawable.im_vidalroy_goswim);
         tvStoryText.setText("Where would you like to go swimming ?");
 
         setAllBtnsVisible();
@@ -377,7 +395,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void inHotel() {
-
+        ivStory.setImageResource(R.drawable.im_vidalroy_inhotel);
         tvStoryText.setText("Which pool would you like to swim in  ?");
 
         setAllBtnsVisible();
@@ -401,7 +419,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void infinityPool() {
-
+        ivStory.setImageResource(R.drawable.im_vidalroy_ininiftypool);
         tvStoryText.setText("What time would you like to go swimming ?");
 
         setAllBtnsVisible();
@@ -425,7 +443,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void mainPool() {
-
+        ivStory.setImageResource(R.drawable.im_vidalroy_mainpool);
         tvStoryText.setText("What time would you like to go swimming ?");
 
         setAllBtnsVisible();
@@ -449,7 +467,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void amazonRiver() {
-
+        ivStory.setImageResource(R.drawable.im_vidalroy_amazonriver);
         tvStoryText.setText("What time would you like to go swimming ?");
 
         setAllBtnsVisible();
@@ -473,6 +491,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void elevenAm() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_elevenam_infintypool);
         isWon = false;
         tvStoryText.setText("There is too many people in the pool at this time and you " +
                 "fall over the edge. Game over.");
@@ -492,6 +511,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void tenPm() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_tenpm_inifity);
         isWon = false;
         tvStoryText.setText("people steal your items and you have no money to survive. " +
                 "It was to dark to see anything. Game over.");
@@ -511,6 +531,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void twelvePm() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_twelvepm_mainpool);
         isWon = false;
         tvStoryText.setText("There was to many people in the pool and you got stuck " +
                 "underwater and drowned Game over.");
@@ -530,6 +551,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void ninePm() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_ninepm_mainpool);
         isWon = false;
         tvStoryText.setText("You drown because there is no lifeguard on duty this late Game over.");
 
@@ -548,6 +570,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void tenAm() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_tenam_amazonriver);
         isWon = false;
         tvStoryText.setText("Hunters rob you on the way to the river" +
                 " Game over.");
@@ -567,6 +590,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void onePm() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_onepm_amazonriver);
         isWon = false;
         tvStoryText.setText("You get attacked by piranhas in the amazon river. Game over.");
 
@@ -587,6 +611,7 @@ public class GameRoyVidal extends GameActivity {
     //OPTION 3 __________________________________________________________________
 
     private void goExplore() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_goexplore);
 
         tvStoryText.setText("Where would you like to explore?");
 
@@ -617,6 +642,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void goToTown() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_gototown);
 
         tvStoryText.setText("Do you want to go shopping or go to the amusment park ?");
 
@@ -641,6 +667,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void goShop() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_goshop);
 
         tvStoryText.setText("How much money would you like to bring to town ?");
 
@@ -665,6 +692,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void goAmusement() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_goamusement);
 
         tvStoryText.setText("Do you want to get food at the Amusement park ?");
 
@@ -689,6 +717,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void getFood() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_getfood_amuse);
 
         tvStoryText.setText("How much food do you want to eat ?");
 
@@ -713,6 +742,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void noFood() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_nofood_amuse);
 
         tvStoryText.setText("Do you still want something to drink or no?");
 
@@ -737,6 +767,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void goToZoo() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_gotozoo);
 
         tvStoryText.setText("Do you want to get food at the zoo or go straight to the bird exibit");
 
@@ -761,6 +792,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void getZooFood() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_getzoofood);
 
         tvStoryText.setText("Do you want to eat a chicken sandwhich or have a burger?");
 
@@ -786,6 +818,7 @@ public class GameRoyVidal extends GameActivity {
 
 
     private void goToRiver() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_gotoriver);
 
         tvStoryText.setText("Would you rather follow the trail ahead or go back?");
 
@@ -810,6 +843,7 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void followTrail() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_followtrail);
 
         tvStoryText.setText("Would you rather go on a paid tour of the rainforest or go on your own?");
 
@@ -834,6 +868,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void getCombo() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_getcombo);
+
         isWon = false;
         tvStoryText.setText("You eat too much and throw up on the roller coaster. " +
                 "You are sick and can't continue your vacation");
@@ -853,6 +889,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void getSnack() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_nofood_amuse);
+
         isWon = false;
         tvStoryText.setText("You did not have enough food and starve to death. " +
                 "You can't continue your vacation.");
@@ -872,6 +910,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void getDrink() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_getdrinkamuse);
+
         isWon = false;
         tvStoryText.setText("Someone Spiked your drink and you pass out." +
                 " You can't continue your vacation. Game over.");
@@ -891,6 +931,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void getNoDrink() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_getnodrink_amuse);
+
         isWon = false;
         tvStoryText.setText("You have not been drinking enough water and " +
                 "have died of thirst. You can't continue your vacation.. Game over.");
@@ -910,6 +952,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void goToBirds() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_gotobirds);
+
         isWon = false;
         tvStoryText.setText("A giant bird bird picks you up and drops " +
                 "you down a cliff. You die and can't continue your vacation Game over.");
@@ -929,6 +973,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void getChicken() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_getchicken_zoo);
+
         isWon = false;
         tvStoryText.setText("You get attacked by a hungry fox and loose your food. Game over.");
 
@@ -947,6 +993,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void getBurger() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_getburger_zoo);
+
         isWon = false;
         tvStoryText.setText("Lion escapes its cage and attacks you for your burger." +
                 " He kills you and you can't continue your vacation. Game over.");
@@ -966,6 +1014,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void goBack() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_goback);
+
         isWon = false;
         tvStoryText.setText("Your friends call you scared and leave you in the " +
                 "middle of the forest. You are now lost and cant continue your" +
@@ -987,6 +1037,8 @@ public class GameRoyVidal extends GameActivity {
 
 
     private void bringExtra() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_bringextra);
+
         isWon = false;
         tvStoryText.setText("You get robbed for all of your money. " +
                 "You can't continue your vacation. Game over.");
@@ -1006,6 +1058,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void bringLess() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_bringless);
+
         isWon = false;
         tvStoryText.setText(" You run out of money and cant afford the bus home. " +
                 "You are stranded. You can't continue your vacation. Game over.");
@@ -1026,6 +1080,8 @@ public class GameRoyVidal extends GameActivity {
 
 
     private void goOnTour() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_goontour);
+
         isWon = false;
 
         tvStoryText.setText("Your tour gets robbed by an amazon village with guns. " +
@@ -1046,6 +1102,8 @@ public class GameRoyVidal extends GameActivity {
     }
 
     private void onYourOwn() {
+        ivStory.setImageResource(R.drawable.im_vidalroy_onyourown);
+
         isWon = true;
 
         tvStoryText.setText("Your going the right way...");
@@ -1090,6 +1148,7 @@ public class GameRoyVidal extends GameActivity {
 
     private void end() {
         if (isWon) {
+            ivStory.setImageResource(R.drawable.im_vidalroy_win);
             tvStoryText.setText("You win, you have found hidden treasure" +
                     " on your hike and are now the richest person alive. You buy a private jet and fly home.");
 
@@ -1100,7 +1159,9 @@ public class GameRoyVidal extends GameActivity {
         }
 
         if (numLives > 0) {
-            btn1.setText("Play again!");
+            ivStory.setImageResource(R.drawable.im_vidalroy_tryagain);
+
+            btn1.setText("Play again you woke up back in your room!");
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -1108,6 +1169,8 @@ public class GameRoyVidal extends GameActivity {
                 }
             });
         } else {
+            ivStory.setImageResource(R.drawable.im_vidalroy_gameover);
+
             tvStoryText.setText("Noone can save you anymore. Gameover");
             btn1.setText("Back to menu");
 
