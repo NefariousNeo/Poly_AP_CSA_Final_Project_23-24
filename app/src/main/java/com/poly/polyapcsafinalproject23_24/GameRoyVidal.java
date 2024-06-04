@@ -45,21 +45,31 @@ public class GameRoyVidal extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_vidalroy_enterhotel);
 
-
         //initialize number of lives
         numLives = 5;
 
 
         //display project title and description
-        System.out.println("VACATION - THE AMAZON FOREST");
-        System.out.println("You and your friends take a trip to the amazon. There are many wrong paths, but the right path will change your life!");
+        tvStoryText.setText("You and your friends take a trip to the amazon. There are many wrong paths, but the right path will change your life!");
+        setAllBtnsVisible();
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
 
-        start();
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
     }
 
     private void start() {
         //start adventure here _________________________
 
+        ivStory.setImageResource(R.drawable.im_vidalroy_enterhotel);
+        tvStoryText.setText("Welcome to the amazon vacation activity planner. Where would you like to go first ?");
 
         setAllBtnsVisible();
         btn1.setText("Stay In Hotel");
@@ -96,8 +106,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("What would you like to do inside the hotel?");
 
         setAllBtnsVisible();
-        btn1.setText("leaveRoom");
-        btn2.setText("stayInRoom");
+        btn1.setText("Leave room");
+        btn2.setText("Stay In Room");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -146,8 +156,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("What would you rather do inside the lobby ?");
 
         setAllBtnsVisible();
-        btn1.setText("eightBall");
-        btn2.setText("blackJack");
+        btn1.setText("Play Eight Ball");
+        btn2.setText("Play Black Jack");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -171,8 +181,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("What would you rather do outside ?");
 
         setAllBtnsVisible();
-        btn1.setText("playBasketball");
-        btn2.setText("playFootball");
+        btn1.setText("Play Basketball");
+        btn2.setText("Play Football");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -196,9 +206,9 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("What would you rather do, go outside or stay inside the lobby ?");
 
         setAllBtnsVisible();
-        btn1.setText("takeNap");
-        btn2.setText("watchTv");
-        btn3.setText("talkGf");
+        btn1.setText("Take a Nap");
+        btn2.setText("Watch Tv");
+        btn3.setText("Talk to Gf");
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -226,7 +236,7 @@ public class GameRoyVidal extends GameActivity {
         ivStory.setImageResource(R.drawable.im_vidalroy_talkgf);
 
         isWon = false;
-        tvStoryText.setText("You and your crazy Grilfriend get into an argument." +
+        tvStoryText.setText("You and your crazy Girlfriend get into an argument." +
                 " She shoots you because she is crazy. Game over.");
 
 
@@ -351,7 +361,7 @@ public class GameRoyVidal extends GameActivity {
         ivStory.setImageResource(R.drawable.im_vidalroy_watchtv);
 
         isWon = false;
-        tvStoryText.setText("The burgers werent cooked correctly, you now " +
+        tvStoryText.setText("The burgers weren't cooked correctly, you now " +
                 "have a stomach virus. Game over.");
 
 
@@ -375,8 +385,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("Where would you like to go swimming ?");
 
         setAllBtnsVisible();
-        btn1.setText("inHotel");
-        btn2.setText("amazonRiver");
+        btn1.setText("In Hotel");
+        btn2.setText("Amazon River");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -399,8 +409,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("Which pool would you like to swim in  ?");
 
         setAllBtnsVisible();
-        btn1.setText("infinityPool");
-        btn2.setText("mainPool");
+        btn1.setText("Infinity Pool");
+        btn2.setText("Main Pool");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -423,8 +433,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("What time would you like to go swimming ?");
 
         setAllBtnsVisible();
-        btn1.setText("elevenAm");
-        btn2.setText("tenPm");
+        btn1.setText("Eleven Am");
+        btn2.setText("Ten Pm");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -447,8 +457,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("What time would you like to go swimming ?");
 
         setAllBtnsVisible();
-        btn1.setText("twelevePm");
-        btn2.setText("ninePm");
+        btn1.setText("Twelve Pm");
+        btn2.setText("Nine Pm");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -471,8 +481,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("What time would you like to go swimming ?");
 
         setAllBtnsVisible();
-        btn1.setText("tenAm");
-        btn2.setText("onePm");
+        btn1.setText("Ten Am");
+        btn2.setText("One Pm");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -616,9 +626,9 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("Where would you like to explore?");
 
         setAllBtnsVisible();
-        btn1.setText("goToTown");
-        btn2.setText("goToRiver");
-        btn3.setText("goToZoo");
+        btn1.setText("Go To Town");
+        btn2.setText("Go To River");
+        btn3.setText("Go To Zoo");
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -644,24 +654,24 @@ public class GameRoyVidal extends GameActivity {
     private void goToTown() {
         ivStory.setImageResource(R.drawable.im_vidalroy_gototown);
 
-        tvStoryText.setText("Do you want to go shopping or go to the amusment park ?");
+        tvStoryText.setText("Do you want to go shopping or go to the amusement park ?");
 
         setAllBtnsVisible();
-        btn1.setText("goShop");
-        btn2.setText("goAmusement");
+        btn1.setText("Go Shop");
+        btn2.setText("Go Amusement");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tenAm();
+                goShop();
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onePm();
+                goAmusement();
             }
         });
     }
@@ -672,8 +682,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("How much money would you like to bring to town ?");
 
         setAllBtnsVisible();
-        btn1.setText("bringExtra");
-        btn2.setText("bringLess");
+        btn1.setText("Bring Extra");
+        btn2.setText("Bring Less");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -697,8 +707,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("Do you want to get food at the Amusement park ?");
 
         setAllBtnsVisible();
-        btn1.setText("getFood");
-        btn2.setText("noFood");
+        btn1.setText("Get Food");
+        btn2.setText("No Food");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -722,8 +732,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("How much food do you want to eat ?");
 
         setAllBtnsVisible();
-        btn1.setText("getCombo");
-        btn2.setText("getSnack");
+        btn1.setText("Get Combo");
+        btn2.setText("Get Snack");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -747,8 +757,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("Do you still want something to drink or no?");
 
         setAllBtnsVisible();
-        btn1.setText("getDrink");
-        btn2.setText("getNoDrink");
+        btn1.setText("Get Drink");
+        btn2.setText("Get No Drink");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -769,11 +779,11 @@ public class GameRoyVidal extends GameActivity {
     private void goToZoo() {
         ivStory.setImageResource(R.drawable.im_vidalroy_gotozoo);
 
-        tvStoryText.setText("Do you want to get food at the zoo or go straight to the bird exibit");
+        tvStoryText.setText("Do you want to get food at the zoo or go straight to the bird exhibit");
 
         setAllBtnsVisible();
-        btn1.setText("getZooFood");
-        btn2.setText("goToBirds");
+        btn1.setText("Get Zoo Food");
+        btn2.setText("Go To Birds");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -794,11 +804,11 @@ public class GameRoyVidal extends GameActivity {
     private void getZooFood() {
         ivStory.setImageResource(R.drawable.im_vidalroy_getzoofood);
 
-        tvStoryText.setText("Do you want to eat a chicken sandwhich or have a burger?");
+        tvStoryText.setText("Do you want to eat a chicken sandwich or have a burger?");
 
         setAllBtnsVisible();
-        btn1.setText("getChicken");
-        btn2.setText("getBurger");
+        btn1.setText("Get Chicken");
+        btn2.setText("Get Burger");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -823,8 +833,8 @@ public class GameRoyVidal extends GameActivity {
         tvStoryText.setText("Would you rather follow the trail ahead or go back?");
 
         setAllBtnsVisible();
-        btn1.setText("followTrail");
-        btn2.setText("goBack");
+        btn1.setText("Follow The Trail");
+        btn2.setText("Go Back");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -849,7 +859,7 @@ public class GameRoyVidal extends GameActivity {
 
         setAllBtnsVisible();
         btn1.setText("On Your Own");
-        btn2.setText("goOnTour");
+        btn2.setText("Go On Tour");
         btn3.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -1154,7 +1164,7 @@ public class GameRoyVidal extends GameActivity {
 
         } else {
             numLives--;
-            String text = "You made too many wrong descions! Either try again or quit You have " + numLives + " Times that you can be rescued";
+            String text = "You made too many wrong decisions! Either try again or quit You have " + numLives + " Times that you can be rescued";
             tvStoryText.setText(text);
         }
 
@@ -1171,7 +1181,7 @@ public class GameRoyVidal extends GameActivity {
         } else {
             ivStory.setImageResource(R.drawable.im_vidalroy_gameover);
 
-            tvStoryText.setText("Noone can save you anymore. Gameover");
+            tvStoryText.setText("No one can save you anymore. Game over");
             btn1.setText("Back to menu");
 
 
