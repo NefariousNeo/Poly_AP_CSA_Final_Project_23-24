@@ -1171,7 +1171,7 @@ public class GameBinghamDaniel extends GameActivity {
         });
     }
 
-    //Kiyomizu-dera Temple Branch
+    //Kiyomizu-dera Temple
     private void anotherTemple()
     {
         tvSubtitle.setText("Kiyomizu-dera Temple Branch");
