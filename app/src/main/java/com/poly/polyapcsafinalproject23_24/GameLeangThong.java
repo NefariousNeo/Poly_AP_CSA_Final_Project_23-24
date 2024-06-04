@@ -46,7 +46,7 @@ public class GameLeangThong extends GameActivity {
 
         isWon = false;
 
-        ivStory.setImageResource(R.drawable.pill);
+        ivStory.setImageResource(R.drawable.im_leangthong_pills);
 
         tvStoryText.setText("You're a freshmen at a college frat party, a senior offers you three pills. A red, a blue, and a black pill. Which pill will you take?");
         setAllBtnsVisible();
@@ -80,7 +80,7 @@ public class GameLeangThong extends GameActivity {
     public void mountain()
     {
         //mountain adventure
-        ivStory.setImageResource(R.drawable.mountain);
+        ivStory.setImageResource(R.drawable.im_leangthong_mountain);
 
         tvStoryText.setText("You wake on a desolated rocky mountain, and find a piece of paper in your hand. You read it and it says, Reach the top and a reward awaits you.");
 
@@ -110,7 +110,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("While you hike up the colossal mountain you encounter a mountain lion. What do you do?");
 
-        ivStory.setImageResource(R.drawable.hike);
+        ivStory.setImageResource(R.drawable.im_leangthong_hike);
 
         setAllBtnsVisible();
         btn1.setText("Fight");
@@ -137,7 +137,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("You're not that guy pal... the mountain lion mauls you.");
 
-        ivStory.setImageResource(R.drawable.im_runaway);
+        ivStory.setImageResource(R.drawable.im_leangthong_run_away);
 
         setAllBtnsVisible();
         btn1.setText("Continue");
@@ -160,7 +160,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("You're not that guy pal... the mountain lion beats you to a pulp.");
 
-            ivStory.setImageResource(R.drawable.im_fight);
+            ivStory.setImageResource(R.drawable.im_leangthong_fight);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -178,7 +178,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("You found grenades on the ground and blow up the fierce beast.");
 
-            ivStory.setImageResource(R.drawable.im_grenades);
+            ivStory.setImageResource(R.drawable.im_leangthong_grenades);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -201,7 +201,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("You survived the fight, but die to blood loss... womp womp");
 
-            ivStory.setImageResource(R.drawable.im_lose_to_lion);
+            ivStory.setImageResource(R.drawable.im_leangthong_lose_to_lion);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -219,7 +219,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("You managed to take out the lion without even a scratch");
 
-            ivStory.setImageResource(R.drawable.im_defeatlion);
+            ivStory.setImageResource(R.drawable.im_leangthong_defeat_lion);
 
             setAllBtnsVisible();
             btn1.setText("Continue");
@@ -239,7 +239,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("Congratulations Adventurer!!! Oh wait there's an alter with a purple drink on it. Do you drink it?");
 
-        ivStory.setImageResource(R.drawable.im_purple_drink_mountain);
+        ivStory.setImageResource(R.drawable.im_leangthong_purple_drink_mountain);
 
         setAllBtnsVisible();
         btn1.setText("Drink the mysterious lean");
@@ -251,7 +251,7 @@ public class GameLeangThong extends GameActivity {
             public void onClick(View v) {
 
                 tvStoryText.setText("You drink the lean, and black out once again. You wake back up at the party, and the senior offers you the pills again. Which will you take?");
-                ivStory.setImageResource(R.drawable.im_purple_drink_mountain);
+                ivStory.setImageResource(R.drawable.im_leangthong_drinking_potion_mountain);
 
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -268,7 +268,7 @@ public class GameLeangThong extends GameActivity {
             public void onClick(View v) {
 
                 tvStoryText.setText("Guess what... you died to oxygen deprivation (hahahhahahahahahahahhaahahahah)");
-                ivStory.setImageResource(R.drawable.im_person_drinking_potion_mountain);
+                ivStory.setImageResource(R.drawable.im_leangthong_oxygen);
 
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -288,7 +288,7 @@ public class GameLeangThong extends GameActivity {
 
         tvStoryText.setText("You decided to scale the mountain");
 
-        ivStory.setImageResource(R.drawable.im_laborday_arrive_at_beach);
+        ivStory.setImageResource(R.drawable.im_leangthong_climb);
 
         setAllBtnsVisible();
         btn1.setText("Take it nice and slow (slowpoke)");
@@ -312,7 +312,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("Well you're no fun, but after 37 hours of climbing slower than a grandma on the highway, you make it to the top.");
 
-        ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
+        ivStory.setImageResource(R.drawable.im_leangthong_slow_poke);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -331,14 +331,14 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("You decided to ball out and speedrun climbing the mountain.");
 
-        ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
+        ivStory.setImageResource(R.drawable.im_leangthong_yolo_climb);
         double chance = Math.random();
 
         if (chance <= .5)
         {
             tvStoryText.setText("Well... that was a bad idea you fell and snap both your legs. And some rabid bunnies tickle you to death.");
 
-            ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
+            ivStory.setImageResource(R.drawable.im_leangthong_fall);
 
             setAllBtnsVisible();
             btn1.setText("Next");
@@ -356,7 +356,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("Oh wow you survived the climb... You have reached the top of the mountain!!!");
 
-            ivStory.setImageResource(R.drawable.im_laborday_tan5hours);
+            ivStory.setImageResource(R.drawable.im_leangthong_successful_climb);
 
             setAllBtnsVisible();
             btn1.setText("Next");
@@ -378,7 +378,7 @@ public class GameLeangThong extends GameActivity {
         //island adventure
         tvStoryText.setText("You wake up in a plane seat of a plane that seemed to have crash on a beach and is also missing its front half. Well anyways you smell some oil and... booooommmmmmmm****, you get sent flying across the beach and slam into a palm tree. You regain consciousness after a few hours and it's about to be night so now you have to find shelter. Where do you go?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+        ivStory.setImageResource(R.drawable.im_leangthong_island);
 
         setAllBtnsVisible();
         btn1.setText("Walk along the coast");
@@ -405,7 +405,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("You decided on venturing into the forest. The forest is loud and wet. Mosquitoes are going crazy and biting the living out of you. Itchy and afraid you start hearing some familar sounds. The sound of people, you begin rushing to the sound. As your about to reach the sound , you decided to hide in a bush to make sure they're friendly first of all. You see local natives of the natives in a small village living peacefully. Now what will you do?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_forest);
 
         setAllBtnsVisible();
         btn1.setText("Join them (boring) peacefully");
@@ -431,7 +431,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("Well aren't you a genocidal maniac... So how will you approach this massacre? ");
 
-        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_exterminate);
 
         setAllBtnsVisible();
         btn1.setText("Burn their village to the ground");
@@ -457,7 +457,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("To top it off you're also a Pyromaniac. Well anyways you camp in the bush till night time. After all the villagers fell asleep you begin igniting all their wood houses. As you watch the inferno with the screams of the poor villagers. You seem to have overdone it and the fire is spreading to the trees, but anyways that ain't you're problem so you decide to call it a day and went to sleep.");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_arson);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -474,7 +474,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("As you wake up from your beauty sleep and you hear the faint sounds of helicoptors, they seemed to have notice the notice the hellfire you caused last night. A helicoptor picks you up and you flies back to the main land. However, you see a familar face sitting next to you. It's the senior and he offers you the pills once again. Which will you take?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_helicoptor);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -491,14 +491,14 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("You leave the bush and get ready to massacre them all with your bare hands, when out came a 7ft tall and jacked up villager from the treelines, ready to throw hands.");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_big_man);
 
         double luckFight = Math.random();
         if (luckFight > .5)
         {
             tvStoryText.setText("The giant rams right into you at the speed of 50 mph, sending you ragdolling, as you barely get up he grabs you by the neck and tosses you into the air, then does a flying knee to your spine rendering you crippled. After all that he drags you to an active volcano and launches straight into the molten lava. X_X");
 
-            ivStory.setImageResource(R.drawable.im_laborday_rain);
+            ivStory.setImageResource(R.drawable.im_leangthong_ram);
 
             setAllBtnsVisible();
             btn1.setText("Next");
@@ -516,7 +516,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("With the power of plot armor and the gun in your pocket you take out the giant man before he could even touched you. After that shortlived battle, the villagers were amazed by your skills and offer you a bowl filled with a purple liquid. Do you drink it?");
 
-            ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+            ivStory.setImageResource(R.drawable.im_leangthong_beat_giant);
 
             setAllBtnsVisible();
             btn1.setText("Yes (gotta stay hydrated)");
@@ -542,7 +542,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("You come out the bush hands in the air, and the natives start screaming and they start blowdarting you. As the 100 tranqs enter your system you immediately knock out. You slowly start waking up after a few days, your legs are completely paralyzed and you're being dragged by the natives. They bring you to a room and throw you into it. Now in front you lays a bowl full of a purple substance. Do you drink it?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_join);
 
         setAllBtnsVisible();
         btn1.setText("Drink it...What's the worse that could happen?");
@@ -568,7 +568,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("You drink the mysterious purple substance, and black out once again. You wake back up at the party, and the senior offers you the pills again. Which will you take?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_potion);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -589,7 +589,7 @@ public class GameLeangThong extends GameActivity {
 
         tvStoryText.setText("Well you decided not take it. Afterwards, the villagers greeted you as one of their own and you live the rest of your meaningless life as one of them. Shortly after you died to some waterborne disease.");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_no_potion);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -607,7 +607,7 @@ public class GameLeangThong extends GameActivity {
 
         tvStoryText.setText("While you walk along the coast, you spot something in the distance and run towards it, only to find a skinwalker eating a sea lion. As you try backing up the stench of your musty clothes gains the attention of the skinwalker and it starts chasing after you. What now?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_soccer_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_coast);
 
         setAllBtnsVisible();
         btn1.setText("Run for dear life");
@@ -636,7 +636,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("Shouldn't have been a couch potato... the skinwalker catches you and chomps off your head. Then it proceeds to emote on you.");
 
-            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+            ivStory.setImageResource(R.drawable.im_leangthong_keep_on_running);
 
             setAllBtnsVisible();
             btn1.setText("Next");
@@ -652,7 +652,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("You somehow managed to outrun the skinwalker... joining the track team was a good decision on your part.");
 
-            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+            ivStory.setImageResource(R.drawable.im_leangthong_water);
 
             setAllBtnsVisible();
             btn1.setText("Next");
