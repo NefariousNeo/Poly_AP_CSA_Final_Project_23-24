@@ -38,6 +38,7 @@ public class GameOntiverosMichael extends GameActivity {
 
         btnSleep.setText("Go to sleep");
         btnStayUp.setText("Stay up");
+        ivPicture.setImageResource(R.drawable.im_ontiverosmichael_bed);
 
         runSleeper();
     }
@@ -111,11 +112,13 @@ public class GameOntiverosMichael extends GameActivity {
     {
         if (player.getHealth() <= 0)
         {
+            ivPicture.setImageResource(R.drawable.im_ontiverosmicjhael_losthealth);
             tvText.setText("Your health is down");
 
         }
         if (player.getInsanity() >= 100)
         {
+            ivPicture.setImageResource(R.drawable.im_ontiverosmicjhael_insane);
             tvText.setText("Woah you slept " + player.getTimeHasSleep() + " those are rookie numbers\n\n" +
                     "Do you want to sleep?");
 
