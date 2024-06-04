@@ -652,7 +652,7 @@ public class GameLeangThong extends GameActivity {
         {
             tvStoryText.setText("You somehow managed to outrun the skinwalker... joining the track team was a good decision on your part.");
 
-            ivStory.setImageResource(R.drawable.im_leangthong_water);
+            ivStory.setImageResource(R.drawable.im_leangthong_successfully_running_away);
 
             setAllBtnsVisible();
             btn1.setText("Next");
@@ -661,7 +661,7 @@ public class GameLeangThong extends GameActivity {
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) { defeat(); }
+                public void onClick(View v) { boat(); }
             });
         }
     }
@@ -669,7 +669,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("After running for hours on end you find a boat house. You decide to finally rest after the day you had until you suddenly smell the scent of gas... kabooooommm**** (don't go in other people's houses.)");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_boat);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -685,7 +685,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("You really thought that would work?... the skinwalker jumps on top of you and drowns you. Then it teabags on your corpse.");
 
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_water);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -1162,18 +1162,31 @@ public class GameLeangThong extends GameActivity {
         numLives--;
 
         //clear console, display text, etc
-        System.out.println("...");
+
 
         //determine if player gets to play again
         if (numLives > 0)
         {
             //if you still have lives, return to start()
-            start();
+            tvStoryText.setText("Damn you suck");
+            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    start();
+                }
+            });
         }
         else
         {
             //print game over message
-            System.out.println("GAME OVER LOSER");
+            tvStoryText.setText("GAME OVER LOSER");
         }
 
     }
