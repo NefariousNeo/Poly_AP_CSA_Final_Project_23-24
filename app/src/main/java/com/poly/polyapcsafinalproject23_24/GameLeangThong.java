@@ -28,6 +28,7 @@ public class GameLeangThong extends GameActivity {
         btn3 = findViewById(R.id.btn_3);
 
         tvTitle.setText("Which pill will you take?");
+        tvSubtitle.setText("By Andrew Leang");
         numLives = 5;
         start();
     }
@@ -81,6 +82,7 @@ public class GameLeangThong extends GameActivity {
     {
         //mountain adventure
         ivStory.setImageResource(R.drawable.im_leangthong_mountain);
+        tvSubtitle.setVisibility(View.INVISIBLE);
 
         tvStoryText.setText("You wake on a desolated rocky mountain, and find a piece of paper in your hand. You read it and it says, Reach the top and a reward awaits you.");
 
@@ -250,13 +252,10 @@ public class GameLeangThong extends GameActivity {
             @Override
             public void onClick(View v) {
 
-                tvStoryText.setText("You drink the lean, and black out once again. You wake back up at the party, and the senior offers you the pills again. Which will you take?");
-                ivStory.setImageResource(R.drawable.im_leangthong_drinking_potion_mountain);
-
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        start();
+                        drinkPotionOnMountain();
                     }
                 });
 
@@ -267,15 +266,52 @@ public class GameLeangThong extends GameActivity {
             @Override
             public void onClick(View v) {
 
-                tvStoryText.setText("Guess what... you died to oxygen deprivation (hahahhahahahahahahahhaahahahah)");
-                ivStory.setImageResource(R.drawable.im_leangthong_oxygen);
-
-                btn1.setOnClickListener(new View.OnClickListener() {
+                btn2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        defeat();
-                     }
+                        dontDrinkPotionOnMountain();
+                    }
                 });
+            }
+        });
+
+    }
+
+    public void drinkPotionOnMountain()
+    {
+        tvStoryText.setText("You drink the lean, and black out once again. You wake back up at the party, and the senior offers you the pills again. Which will you take?");
+
+        ivStory.setImageResource(R.drawable.im_leangthong_drinking_potion_mountain);
+
+        setAllBtnsVisible();
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
+    }
+
+    public void dontDrinkPotionOnMountain()
+    {
+        tvStoryText.setText("Guess what... you died to oxygen deprivation (hahahhahahahahahahahhaahahahah)");
+
+        ivStory.setImageResource(R.drawable.im_leangthong_oxygen);
+
+        setAllBtnsVisible();
+        btn1.setText("Continue");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                defeat();
             }
         });
 
@@ -493,6 +529,19 @@ public class GameLeangThong extends GameActivity {
 
         ivStory.setImageResource(R.drawable.im_leangthong_big_man);
 
+        setAllBtnsVisible();
+        btn1.setText("Next");
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { bigManFightProbability(); }
+        });
+    }
+
+    public void bigManFightProbability()
+    {
         double luckFight = Math.random();
         if (luckFight > .5)
         {
@@ -703,7 +752,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("You wake up in a trench, you are in the middle of battle during a blitzkrieg. You also have no weapons on you except for your French uniform. You hear nazi soldiers closing in on you. You gotta make a move now, what will you do?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+        ivStory.setImageResource(R.drawable.im_leangthong_war);
 
         setAllBtnsVisible();
         btn1.setText("Play dead (Too Scawwyy >_<)");
@@ -729,7 +778,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("Good job soldier, you made the right choice. Now what is your first line of action?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+        ivStory.setImageResource(R.drawable.im_leangthong_war_fight);
 
         setAllBtnsVisible();
         btn1.setText("Loot a gun from a body (They aint gonna need it anymore)");
@@ -755,7 +804,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("You let go of your morals and start looting some bodies. !!!!YOU FOUND A LUGER!!!! with one bullet in it only. What's the strategy now?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+        ivStory.setImageResource(R.drawable.im_leangthong_loot);
 
         setAllBtnsVisible();
         btn1.setText("Camp (superior tactic)");
@@ -781,7 +830,7 @@ public class GameLeangThong extends GameActivity {
     {
         tvStoryText.setText("Now that you have yourself a weapon (1 bullet *_*) how are you going to go about winning the war?");
 
-        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+        ivStory.setImageResource(R.drawable.im_leangthong_shoot);
 
         setAllBtnsVisible();
         btn1.setText("Be strategic and plan first (nerd 0_0)");
@@ -806,7 +855,7 @@ public class GameLeangThong extends GameActivity {
     public void sniped()
     {
         tvStoryText.setText("You decided on making a plan, so to start you should get a view of your surroundings. You peak your head outside the trench... you're dead you just got head-shotted by a sniper 10 miles away (skill issue).");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_sniped);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -824,7 +873,7 @@ public class GameLeangThong extends GameActivity {
     public void tank()
     {
         tvStoryText.setText("You don't need a plan you're the main character, so with that you jump out of the trenches and start running across the battlefield, dodging stray bullets with the power of plot armor, and you come across a empty tank. You pilot it and go on a rampage deleting the enemy and your allies. After five filler episodes you finally finish the battle and come out on top.");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_tank);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -842,7 +891,7 @@ public class GameLeangThong extends GameActivity {
     public void victory()
     {
         tvStoryText.setText("As you celebrate your victory against the Nazis, a portal suddenly opens below you sending you into a void of complete darkness, you shortly black out after loss of oxygen. You wake back up at the party, and the senior offers you the pills again. Which will you take?");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_victory);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -860,7 +909,7 @@ public class GameLeangThong extends GameActivity {
     public void camp()
     {
         tvStoryText.setText("You wait silently and patiently for a target to come by. As nazis pass by you take them out one by one then loot them and repeat. And after 4 hours of this process you manage to wipe out the whole enemy squadron leading your nation to victory. (Fortnite Zero Build) ");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_camp);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -878,6 +927,7 @@ public class GameLeangThong extends GameActivity {
     public void coward()
     {
         tvStoryText.setText("You decide to hide in a bunker till the blitzkriegs ends. (Well I take back what I said you darn sissy)");
+        ivStory.setImageResource(R.drawable.im_leangthong_coward);
         double chance = Math.random();
 
         setAllBtnsVisible();
@@ -902,7 +952,7 @@ public class GameLeangThong extends GameActivity {
     public void gas()
     {
         tvStoryText.setText("Well... that was a bad idea the Nazis leak some gas bombs inside and you suffocate. (L way to die) ");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_gas);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -920,7 +970,7 @@ public class GameLeangThong extends GameActivity {
     public void allies()
     {
         tvStoryText.setText("Whats that... you hear the shooting from outside come to abrupt stop, as you peak your head outside you see that the nazis have left and your allies won. You get to live another day.");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_allies);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -938,7 +988,7 @@ public class GameLeangThong extends GameActivity {
     public void sike()
     {
         tvStoryText.setText("SIKKKEEEE. You got 360 no scoped by a sniper camping on a hill 5 miles away. X_x skill issue");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_sike);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -959,7 +1009,7 @@ public class GameLeangThong extends GameActivity {
         if (chance >= .5)
         {
             tvStoryText.setText("You really thought that would work... the Nazis jump you and beat the living out of you, then they took you to one of their concentration camps");
-            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+            ivStory.setImageResource(R.drawable.im_leangthong_caught);
 
             setAllBtnsVisible();
             btn1.setText("Next");
@@ -976,7 +1026,7 @@ public class GameLeangThong extends GameActivity {
         else
         {
             tvStoryText.setText("Due to your immense stealth skills, you managed to appear completely invisible to the soldiers, as they leave you alone, you see an opening to run to the tree-lines and desert the battle. As you run for dear life you hear your fellow comrades call you a dirty coward.");
-            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+            ivStory.setImageResource(R.drawable.im_leangthong_successful_stealth);
 
             setAllBtnsVisible();
             btn1.setText("Next");
@@ -995,7 +1045,7 @@ public class GameLeangThong extends GameActivity {
     public void deserter()
     {
         tvStoryText.setText("You suddenly feel a hit of guilt as your about to desert the battle. Will you go back in the warzone?");
-        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+        ivStory.setImageResource(R.drawable.im_leangthong_guilt);
 
         setAllBtnsVisible();
         btn1.setText("Go back to the war");
@@ -1020,7 +1070,7 @@ public class GameLeangThong extends GameActivity {
     public void woods()
     {
         tvStoryText.setText("As you flee into the forest you reach an abandoned house, and decide to rest on a bed for a sec. Then you started hearing some beeping under it ... kabboooooooommmmm X_X (the house was rigged with explosives >_<) ");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_woods);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -1038,7 +1088,7 @@ public class GameLeangThong extends GameActivity {
     public void captured()
     {
         tvStoryText.setText("Well now you're a war prisoner of the Nazis. They put you in a cell room with an interrogator. They offer you a chance of freedom, if you rat out your comrades. What will you do?");
-        ivStory.setImageResource(R.drawable.im_laborday_whaley_park);
+        ivStory.setImageResource(R.drawable.im_leangthong_captured);
 
         setAllBtnsVisible();
         btn1.setText("Rat out your team");
@@ -1063,7 +1113,7 @@ public class GameLeangThong extends GameActivity {
     public void dontSnitch()
     {
         tvStoryText.setText("Good on you for staying loyal and not betraying your nation... however the Nazis didn't take it so well and they sent you to solitude confinement.");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_dont_snitch);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -1084,7 +1134,7 @@ public class GameLeangThong extends GameActivity {
         if (speed <= .5)
         {
             tvStoryText.setText("You immediately rat out your whole nation without hesitation.");
-            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+            ivStory.setImageResource(R.drawable.im_leangthong_snitch);
 
             setAllBtnsVisible();
             btn1.setText("Next");
@@ -1101,7 +1151,7 @@ public class GameLeangThong extends GameActivity {
         else
         {
             tvStoryText.setText("Well you betrayed the nation, and even more you were gullible in thinking the nazis will set you free. The nazis drag you into soilitude confinement.");
-            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+            ivStory.setImageResource(R.drawable.im_leangthong_snitch);
 
             setAllBtnsVisible();
             btn1.setText("Next");
@@ -1120,7 +1170,7 @@ public class GameLeangThong extends GameActivity {
     public void prisoner()
     {
         tvStoryText.setText("Well well well, aren't you in a tough pickle now. Trapped in a prison cell waiting to starve to death. (you suck as this game)");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_prisoner);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -1138,7 +1188,7 @@ public class GameLeangThong extends GameActivity {
     public void traitor()
     {
         tvStoryText.setText("Well not only did you betray your whole nation, but with your charismatic skills you convinced the Nazis to let you live by switching teams. *_*). However the bomb implanted into your French suit exploded immediately after detecting your act of treason.");
-        ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+        ivStory.setImageResource(R.drawable.im_leangthong_traitor);
 
         setAllBtnsVisible();
         btn1.setText("Next");
@@ -1169,7 +1219,7 @@ public class GameLeangThong extends GameActivity {
         {
             //if you still have lives, return to start()
             tvStoryText.setText("Damn you suck");
-            ivStory.setImageResource(R.drawable.im_laborday_take_baby);
+            ivStory.setImageResource(R.drawable.im_leangthong_defeat);
 
             setAllBtnsVisible();
             btn1.setText("Next");
@@ -1187,6 +1237,19 @@ public class GameLeangThong extends GameActivity {
         {
             //print game over message
             tvStoryText.setText("GAME OVER LOSER");
+            ivStory.setImageResource(R.drawable.im_leangthong_defeat);
+
+            setAllBtnsVisible();
+            btn1.setText("Next");
+            btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
+
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    start();
+                }
+            });
         }
 
     }
